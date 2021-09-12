@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2021 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Application-create-html.html
+===
+=== Author: $author$
+===   Date: 1/1/2021
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Application - Create .html file</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Application.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-footer.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-dropover.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-popover.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-dropdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-popdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Application-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Application.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Application.html', 'Application-create-html.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Application-logo.html">
+            <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Application-header.html">
+            <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Application-dropdown.html">
+            <script>includeHTML('includeDropdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Application-popdown.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Application-create-html.html">Create .html file</a></li>
+            <li><a href="Application-create-Application-create-html.html">Application Create .html file</a></li>
+            <li><a href="Application-create-css.html">.css file</a></li>
+            <li><a href="Application-create-js.html">.js file</a></li>
+            <li><a href="Application-create-t.html">.t file</a></li>
+            <li class="home"><div><a href="Application.html">Home</a></div></li>
+        </ul>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/html/html.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+            <b>&lt;?xml &nbsp;&nbsp;version="</b><input name="XmlVersion" value="1.0"/><b>"</b>
+            <input type="checkbox" name="is_XmlVersion" value="no" unchecked="checked">no</input>
+            <b> &nbsp;&nbsp;encoding="</b><input name="XmlEncoding" value="utf-8"/><b>"</b>
+            <input type="checkbox" name="is_XmlEncoding" value="no" unchecked="checked">no</input>
+            <b>&nbsp;&nbsp;?&gt;</b>
+            <input type="checkbox" name="is_Xml" value="no" unchecked="checked">no</input><br/>
+            <b>&lt;!--</b> File: <input name="File" value=""></input>[html][.html]
+            <b>--&gt;</b>
+            <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input><br/>
+
+            Template: <select name="FormTemplate">
+            <option value="../templates/t/html/html.t">.html file (../templates/t/html/html.t)</option>
+            <option value="../templates/t/html/Application-create-html.t">Application create .html file (../templates/t/html/Application-create-html.t)</option>
+            <option value="../templates/t/html/html-form-template-parameters.t">.html file form template parameters (../templates/t/html/html-form-template-parameters.t)</option>
+            <option value="../templates/t/html/html-form-file-parameters.t">.html file form parameters (../templates/t/html/html-form-file-parameters.t)</option>
+            <option value="../templates/t/html/html-html-file-parameters.t">.html file file parameters (../templates/t/html/html-file-file-parameters.t)</option>
+            <option value=""></option>
+            <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+            <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+            <option value=""></option>
+            <option value="/Application-cgi/cgi">cgi parameters &nbsp;&nbsp; (/Application-cgi/cgi)</option>
+            <option value="/Application-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/Application-cgi/cgicatch)</option>
+            <option value=""/>
+            <option value="http://localhost:8080/Application-http/http">http parameters &nbsp;&nbsp; (...:8080/Application-http/http)</option>
+            <option value="http://localhost:8080/Application-http/httpcatch">catch http parameters &nbsp;&nbsp; (...:8080/Application-http/httpcatch)</option>
+            </select>
+            <br/>
+
+            <br/>
+            Organization: <input name="Organization" value=""></input>[$organization$]
+                  <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input><br/>
+            Author: <input name="Author" value=""></input>[$author$]
+                  <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input><br/>
+            Date:<input name="Date" value=""/>[%date()%]<b></b>
+                  <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
+            <br/>
+
+            <br/>
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select><br/>
+            Action: <select name="FormAction">
+            <option value="../templates/t/html/html.t">Create .html file (../templates/t/html/html.t)</option>
+            <option value=""></option>
+            <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+            <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+            <option value=""></option>
+            <option value="/Application-cgi/cgi">cgi parameters &nbsp;&nbsp; (/Application-cgi/cgi)</option>
+            <option value="/Application-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/Application-cgi/cgicatch)</option>
+            <option value=""/>
+            <option value="http://localhost:8080/Application-http/http">http parameters &nbsp;&nbsp; (...:8080/Application-http/http)</option>
+            <option value="http://localhost:8080/Application-http/httpcatch">catch http parameters &nbsp;&nbsp; (...:8080/Application-http/httpcatch)</option>
+            </select><br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/><br/>
+
+            <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>
