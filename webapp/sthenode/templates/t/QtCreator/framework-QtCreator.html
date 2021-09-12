@@ -1,0 +1,134 @@
+<!--========================================================================-->
+<!-- Copyright (c) 1988-2017 $organization$                                 -->
+<!--                                                                        -->
+<!-- This software is provided by the author and contributors ``as is''     -->
+<!-- and any express or implied warranties, including, but not limited to,  -->
+<!-- the implied warranties of merchantability and fitness for a particular -->
+<!-- purpose are disclaimed. In no event shall the author or contributors   -->
+<!-- be liable for any direct, indirect, incidental, special, exemplary,    -->
+<!-- or consequential damages (including, but not limited to, procurement   -->
+<!-- of substitute goods or services; loss of use, data, or profits; or     -->
+<!-- business interruption) however caused and on any theory of liability,  -->
+<!-- whether in contract, strict liability, or tort (including negligence   -->
+<!-- or otherwise) arising in any way out of the use of this software,      -->
+<!-- even if advised of the possibility of such damage.                     -->
+<!--                                                                        -->
+<!--   File: framework-QtCreator.html                                       -->
+<!--                                                                        -->
+<!-- Author: $author$                                                       -->
+<!--   Date: 9/2/2017                                                       -->
+<!--========================================================================-->
+<html>
+    <!--========================================================================-->
+    <!-- head                                                                   -->
+    <!--========================================================================-->
+    <head>
+        <title>Create Framework QtCreator Project</title>
+        <!--========================================================================-->
+        <!-- style                                                                  -->
+        <!--========================================================================-->
+        <link rel="stylesheet" type="text/css" href="../css/html-form.css"></link>
+        <style type="text/css">
+        </style>
+        <!--========================================================================-->
+        <!-- script                                                                 -->
+        <!--========================================================================-->
+        <script type="text/javascript" src="../js/html-form.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <!--========================================================================-->
+    <!-- body                                                                   -->
+    <!--========================================================================-->
+    <body>
+        <a href="framework-QtCreator.html"><b>Create Framework QtCreator Project</b></a>
+        <!--========================================================================-->
+        <!-- form                                                                   -->
+        <!--========================================================================-->
+        <form
+         Action="http://localhost/sthenode/templates/t/QtCreator/framework-QtCreator-pri.t"
+         Method="POST" Name="Form"
+         onSubmit="return setFormSubmit(getFormValue2('Template','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+         <div class="form"><hr/>
+            File: <input name="File" value=""/> [Framework.pri | Framework.pro]<br/>
+            </br>
+
+            Depends: <input name="Depends" value="" size="30"/><br/>
+            Framework: <input name="Framework" value=""/><br/>
+            Target: <input name="Target" value=""/><input type="checkbox" name="HasExe" value="yes" unchecked="yes"/>_exe<br/>
+            Os: <input name="Os" value=""/><select name="Os2">
+            <option value=""></option>
+            <option value="Linux">Linux</option>
+            <option value="MacOSX">MacOSX</option>
+            <option value="Windows">Windows</option>
+            </select> [Linux] <input type="checkbox" name="IsOs" value="no" checked="yes"/>no<br/>
+            Style: <input name="Style" value=""/> [xos] <input type="checkbox" name="IsStyle" value="no" checked="yes"/>no<br/>
+            Language: <input name="Language" value=""/> [cpp] <input type="checkbox" name="IsLanguage" value="no" checked="yes"/>no<br/>
+            Template: <select name="Template">
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-QtCreator-pri.t">QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-os-QtCreator-pri.t">Os-QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-build-QtCreator-pri.t">Build-QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-build-depend-QtCreator-pri.t">Build-Depend-QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-depend-QtCreator-pri.t">Depend-QtCreator.pri</option>
+             <option value=""/>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-lib-QtCreator-pri.t">Library-QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-os-lib-QtCreator-pro.t">Os-Library-QtCreator.pro</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-os-lib-QtCreator-pro-config.t">Os-Library-QtCreator-pro-config</option>
+            <option value=""/>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-app-QtCreator-pri.t">Executable-QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-os-app-QtCreator-pro.t">Os-Executable-QtCreator.pro</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-os-app-QtCreator-pro-config.t">Os-Executable-QtCreator-pro-config</option>
+            <option value=""/>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-slib-QtCreator-pri.t">Shared-Library-QtCreator.pri</option>
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-os-slib-QtCreator-pro.t">Os-Shared-Library-QtCreator.pro</option>
+            <option value=""/>
+            <option value="http://localhost/sthenode-cgi/cgi">cgi parameters</option>
+            </select><br/>
+            <br/>
+
+            Organization: <input name="Organization" value="$organization$"/><br/>
+            Author: <input name="Author" value="$author$"/><br/>
+            Date: <input name="Date" value=""/><br/>
+            <br/>
+
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select><br/>
+            Action: <select name="FormAction">
+            <option value="http://localhost/sthenode/templates/t/QtCreator/framework-QtCreator-pri.t">framework-QtCreator-pri.t</option>
+            <option value="http://localhost/sthenode-cgi/cgi">cgi parameters</option>
+            <option value=""></option>
+            </select><br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/><br/>
+
+            <input type="submit" name="submit" value="submit"/><br/>
+        <hr/></div>
+        </form>
+        <table><tr>
+            <td><a href="../Makefile/framework-Gcc-Makefile.html">
+            <b>Create Framework Gcc Makefile<b></a></td>
+            <td width="20"/>
+
+            <td><a href="../cpp/class-hpp-cpp.html"><b>Create C++ Class<b></a></td>
+            <td width="20"/>
+
+            <td><a href="../html/form-html.html"><b>Create HTML Form<b></a></td>
+            <td width="20"/>
+
+            <td><a href="../html/html.html"><b>Create HTML File<b></a></td>
+            <td width="20"/>
+
+            <td><a href="../../../../../.."><b>/sthenode/<b></a></td>
+        </tr></table>
+    </body>
+</html>
+

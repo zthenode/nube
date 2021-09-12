@@ -1,0 +1,123 @@
+<!--========================================================================-->
+<!-- Copyright (c) 1988-2019 $organization$                                 -->
+<!--                                                                        -->
+<!-- This software is provided by the author and contributors ``as is''     -->
+<!-- and any express or implied warranties, including, but not limited to,  -->
+<!-- the implied warranties of merchantability and fitness for a particular -->
+<!-- purpose are disclaimed. In no event shall the author or contributors   -->
+<!-- be liable for any direct, indirect, incidental, special, exemplary,    -->
+<!-- or consequential damages (including, but not limited to, procurement   -->
+<!-- of substitute goods or services; loss of use, data, or profits; or     -->
+<!-- business interruption) however caused and on any theory of liability,  -->
+<!-- whether in contract, strict liability, or tort (including negligence   -->
+<!-- or otherwise) arising in any way out of the use of this software,      -->
+<!-- even if advised of the possibility of such damage.                     -->
+<!--                                                                        -->
+<!--   File: form-html.html                                                 -->
+<!--                                                                        -->
+<!-- Author: $author$                                                       -->
+<!--   Date: 1/29/2019                                                      -->
+<!--========================================================================-->
+<html>
+    <!--========================================================================-->
+    <!-- head                                                                   -->
+    <!--========================================================================-->
+    <head>
+        <title>Sthenode - Create HTML Form</title>
+        <!--========================================================================-->
+        <!-- style                                                                  -->
+        <!--========================================================================-->
+        <link rel="stylesheet" type="text/css" href="../../t/css/html-form-css.t"></link>
+        <style type="text/css">
+        </style>
+        <!--========================================================================-->
+        <!-- script                                                                 -->
+        <!--========================================================================-->
+        <script type="text/javascript" src="../../t/js/html-form-js.t"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+
+    <!--========================================================================-->
+    <!-- body                                                                   -->
+    <!--========================================================================-->
+    <body>
+        <a href="form-html.html"><h3>Create HTML Form</h3></a>
+        <!--========================================================================-->
+        <!-- form                                                                   -->
+        <!--========================================================================-->
+        <form
+         Action="http://localhost/sthenode/templates/t/html/form-html.t"
+         Method="POST" Name="Form"
+         onSubmit="return setFormSubmit(getFormValue2('Template','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+         <div class="form"><hr/>
+
+            <b>&lt;!--</b> File: <input name="File" value="html-form.html"/> <b>--&gt;</b><br/>
+            <b>&lt;html&gt;</b>
+            <b>&lt;head&gt;</b>
+            <b>&lt;title&gt;</b><input name="Framework" value="Sthenode"/> - <input name="Title" value="Create HTML Form"/><b>&lt;/title&gt;</b><br/>
+            <b>&lt;style</b> type=&quot;<input name="StyleType" value="text/css"/>&quot;<b>&gt;</b><input name="Style" value=""/><b>&lt;/style&gt;</b><b>&lt;link</b> href=&quot;<input name="StyleHref" value="../css/html-form.css"/>&quot;<b>&gt;</b><b>&lt;/link&gt;</b><br/>
+            <b>&lt;script</b> type=&quot;<input name="ScriptType" value="text/javascript"/>&quot; src=&quot;<input name="ScriptSrc" value="../js/html-form.js"/>&quot;<b>&gt;</b><input name="Script" value=""/><b>&lt;/script&gt;</b>
+            <b>&lt;/head&gt;</b><br/><br/>
+
+            <b>&lt;body&gt;</b>
+            <b>&lt;form</b><br/>
+            Action=&quot;<input name="Action" value="form-html.t"/>&quot;<br/>
+            Method=&quot;<input name="Method" value="POST"/>&quot;<br/>
+            Name=&quot;<input name="Name" value="Form"/>&quot;<br/>
+            Accept-charset=&quot;<input name="Accept-charset" value=""/>&quot;<br/>
+            Enctype=&quot;<input name="Enctype" value=""/>&quot;<br/>
+            Target=&quot;<input name="Target" value=""/>&quot;<br/>
+            onSublit: <input name="onSublit" size="64" value="return setFormSubmit(getFormValue('%Name%Action','%Name%'),getFormValue('%Name%Method','%Name%'),'%Name%')"/>&quot;<b>&gt;</b><br/><br/>
+            <b>&lt;input name=&quot;</b><input name="Fields" size="64" value=""/><b>;...&quot;&gt;&lt;/input&gt;</b><br/>
+            <b>&lt;a href=&quot;</b><input name="Locations" size="64" value="./form-html.html=Create HTML Form"/><b>;...&quot;&gt;&lt;/a&gt;</b><br/>
+            <b>&lt;/form&gt;</b>
+            <b>&lt;/body&gt;</b>
+            <b>&lt;/html&gt;</b><br/>
+            <br/>
+
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select><br/>
+            Action: <select name="FormAction">
+            <option value="http://localhost/sthenode/templates/t/html/form-html.t">form-html.t</option>
+            <option value="http://localhost/sthenode-cgi/cgi">cgi parameters</option>
+            <option value=""></option>
+            </select><br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/>
+            <br/>
+            <input type="submit" name="submit" value="submit"/><br/>
+
+         <hr/></div>         
+            <table class="table"><tr>
+                <td><a href="../QtCreator/framework-qtcreator.html">
+                <b>Create Framework QtCreator Project</b></a></td>
+                <td width="20"/>
+
+                <td><a href="../Makefile/framework-Gcc-Makefile.html">
+                <b>Create Framework Gcc Makefile<b></a></td>
+
+                <td width="20"/>
+                <td><a href="../cpp/class-hpp-cpp.html"><b>Create C++ Class<b></a></td>
+                <td width="20"/>
+
+                <td><a href="../html/html.html"><b>Create HTML File<b></a></td>
+                <td width="20"/>
+
+                <td><a href="../t/t-t.html"><b>Create T File<b></a></td>
+                <td width="20"/>
+
+                <td><a href="../../.."><b>/sthenode/</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

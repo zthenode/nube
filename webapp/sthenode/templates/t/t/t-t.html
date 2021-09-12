@@ -1,0 +1,113 @@
+<!--========================================================================-->
+<!-- Copyright (c) 1988-2019 $organization$                                 -->
+<!--                                                                        -->
+<!-- This software is provided by the author and contributors ``as is''     -->
+<!-- and any express or implied warranties, including, but not limited to,  -->
+<!-- the implied warranties of merchantability and fitness for a particular -->
+<!-- purpose are disclaimed. In no event shall the author or contributors   -->
+<!-- be liable for any direct, indirect, incidental, special, exemplary,    -->
+<!-- or consequential damages (including, but not limited to, procurement   -->
+<!-- of substitute goods or services; loss of use, data, or profits; or     -->
+<!-- business interruption) however caused and on any theory of liability,  -->
+<!-- whether in contract, strict liability, or tort (including negligence   -->
+<!-- or otherwise) arising in any way out of the use of this software,      -->
+<!-- even if advised of the possibility of such damage.                     -->
+<!--                                                                        -->
+<!--   File: t-t.html                                                       -->
+<!--                                                                        -->
+<!-- Author: $author$                                                       -->
+<!--   Date: 2/5/2019                                                       -->
+<!--========================================================================-->
+<html>
+    <!--========================================================================-->
+    <!-- head                                                                   -->
+    <!--========================================================================-->
+    <head>
+        <title>Sthenode - Create T File</title>
+    
+        <!--========================================================================-->
+        <!-- style                                                                  -->
+        <!--========================================================================-->
+        <link rel="stylesheet" type="text/css" href="../css/html-form.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--========================================================================-->
+        <!-- script                                                                 -->
+        <!--========================================================================-->
+        <script type="text/javascript" src="../js/html-form.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    
+    <!--========================================================================-->
+    <!-- body                                                                   -->
+    <!--========================================================================-->
+    <body>
+        <a href="t-t.html"><h3>Create T File</h3></a>
+
+        <!--========================================================================-->
+        <!-- form                                                                   -->
+        <!--========================================================================-->
+        <form
+         Action="http://localhost/sthenode/templates/t/t/t.t"
+         Method="POST" Name="Form"
+         OnSubmit="return setFormSubmit(getFormValue('FormAction','Form'),getFormValue('FormMethod','Form'),'Form');">
+            <div class="form"><hr/>
+
+            File: <input name="File" value="t.t"></input>
+                  <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input><br/>
+            Parameters: <input name="Parameters" value="Organization=$organization$;Author=$author$;File;Name=%else-then(%filebase(%File%)%,%File%)%;Extension=%fileextension(%File%)%"></input>
+                  lower<input type="checkbox" name="is_Lower" value="no" checked="checked">no</input>
+                  upper/lower<input type="checkbox" name="is_UpperLower" value="no" checked="checked">no</input>
+                  <input type="checkbox" name="is_Parameters" value="no" unchecked="checked">no</input><br/>
+            Organization: <input name="Organization" value=""></input>
+                  <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input><br/>
+            Author: <input name="Author" value=""></input>
+                  <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input><br/><br/>
+
+
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select><br/>
+            Action: <select name="FormAction">
+            <option value="http://localhost/sthenode/templates/t/t/t.t">t.t</option>
+            <option value="http://localhost/sthenode-cgi/cgi">cgi parameters</option>
+            <option value=""></option>
+            </select><br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/><br/>
+
+            <input type="submit" name="submit" value="submit"/>
+            <hr/></div>
+            <table class="table"><tr>
+                <td><a href="../QtCreator/framework-qtcreator.html">
+                <b>Create Framework QtCreator Project</b></a></td>
+                <td width="20"/>
+
+                <td><a href="../Makefile/framework-Gcc-Makefile.html">
+                <b>Create Framework Gcc Makefile<b></a></td>
+                <td width="20"/>
+
+                <td><a href="../cpp/class-hpp-cpp.html"><b>Create C++ Class<b></a></td>
+                <td width="20"/>
+
+                <td><a href="../html/form-html.html"><b>Create HTML Form<b></a></td>
+                <td width="20"/>
+
+                <td><a href="../html/html.html"><b>Create HTML File<b></a></td>
+                <td width="20"/>
+
+                <td><a href="http://localhost/source/sthenode"><b>/sthenode/</b></a></td>
+            </tr></table>         
+        </form>
+    </body>
+</html>

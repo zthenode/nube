@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Sthenode-cxx.html
+===
+=== Author: $author$
+===   Date: 10/13/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Sthenode - Create C/C++ file</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Sthenode.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Sthenode.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Sthenode.html', 'Sthenode-cxx.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Sthenode-logo.html">
+        <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Sthenode-header.html">
+        <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Sthenode-popdown.html">
+        <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Sthenode-dropdown.html">
+        <script>includeHTML('includeDropdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Sthenode-cxx.html">Create C/C++ file</a></li>
+            <li><a href="Sthenode-class-cxx.html">C++ class</a></li>
+            <li><a href="Sthenode-main-cxx.html">C++ main class</a></li>
+            <li><a href="Sthenode-version-cxx.html">C++ version class</a></li>
+            <li><a href="Sthenode-t.html">.t file</a></li>
+            <li class="home"><div><a href="Sthenode.html">Home</a></div></li>
+        </ul>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/cpp/hpp-cpp.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+                File: <input name="file" value=""/>
+                <input type="radio" name="extension" value="hpp" checked="checked">.hpp</input>
+                <input type="radio" name="extension" value="cpp">.cpp</input>
+                <input type="radio" name="extension" value="hxx">.hxx</input>
+                <input type="radio" name="extension" value="cxx">.cxx</input>
+                <input type="radio" name="extension" value="hh">.hh</input>
+                <input type="radio" name="extension" value="cc">.cc</input>
+                <input type="radio" name="extension" value="mm">.mm</input>
+                <input type="radio" name="extension" value="h">.h</input>
+                <input type="radio" name="extension" value="c">.c</input>
+                <input type="radio" name="extension" value="m">.m</input>
+                <input type="checkbox" name="is_lowercase_file" value="yes" unchecked="">lowercase</input>
+                <br/>
+                Vendor: <input name="vendor" value=""/>
+                <input type="checkbox" name="is_vendor" value="no" checked=""/>no<br/>
+
+                <br/>
+                <b>#ifndef </b><input name="ifndef_directory" value="xos"/><b></b>
+                <input type="checkbox" name="is_ifndef" value="no" unchecked=""/>no<br/>
+                <b>#include "</b><input name="include" value="xos/base/base.hpp"/><b>"</b>
+                <input type="checkbox" name="is_include" value="no" unchecked=""/>no<br/>
+                <b>#include &lt;</b><input name="sys_include" value=""/><b>&gt;</b>
+                <input type="checkbox" name="is_sys_include" value="no" unchecked=""/>no<br/>
+
+                <br/>
+                <b>namespace</b> <input name="namespace" value="xos"/> <b>{</b>
+                <input type="checkbox" name="is_namespace" value="no" unchecked=""/>no<br/>
+
+                <br/>
+                <b>} /// namespace</b><br/>
+
+                <br/>
+                Content-Type: <select name="content_type">
+                <option value="text/plain">text</option>
+                <option value="text/html">html</option>
+                <option value="text/xml">xml</option>
+                <option value="application/json">json</option>
+                <option value="application/javascript">javascript</option>
+                <option value=""></option>
+                </select><br/>
+                Action: <select name="FormAction">
+                <option value="../templates/t/cpp/hpp-cpp.t">hpp-cpp.t</option>
+                <option value="/sthenode-cgi/cgi">cgi parameters</option>
+                <option value="/sthenode-cgi/cgicatch">catch cgi parameters</option>
+                <option value=""></option>
+                </select><br/>
+                Method: <select name="FormMethod">
+                <option value="POST">POST</option>
+                <option value="GET">GET</option>
+                <option value=""></option>
+                </select><br/><br/>
+      
+                <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>

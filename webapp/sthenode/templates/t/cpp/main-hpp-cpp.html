@@ -1,0 +1,144 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: main-hpp-cpp.html
+===
+=== Author: $author$
+===   Date: 9/20/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Sthenode - C++ class main {}</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/html.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/html.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="main-hpp-cpp.html"><h3>C++ class main {}</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="main-hpp-cpp.t?this=main-hpp-cpp.t" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+             <input type="radio" name="extension" value="hpp" checked="checked">.hpp</input>
+             <input type="radio" name="extension" value="cpp">.cpp</input>
+             <br/>
+             <br/>
+             <b>#include "</b><input name="include" value="xos/console/main.hpp"/><b>"</b>
+             <input type="checkbox" name="is_include" value="no" unchecked="no"/>no
+             <br/>
+             <br/>
+             <b>namespace {</b><input name="namespace" value="xos/app/console"/><b></b>
+             <input type="checkbox" name="is_namespace" value="no" unchecked="no"/>no
+             <br/>
+             <br/><b>template</b><br/>
+             <b>&lt;class</b> TVersion = <input name="tversion" value="xos::lib::version"/><b>,</b>
+             <input type="checkbox" name="is_tversion" value="no" unchecked="no"/>no
+             <br/>
+             <b>class</b> TExtends = <input name="textends" value="main_optt<TVersion>"/><b>,</b>
+             <input type="checkbox" name="is_textends" value="no" unchecked="no"/>no
+             <br/>
+             <b>class</b> TImplements = <input name="timplements" value="typename TExtends::implements"/><b>></b>
+             <input type="checkbox" name="is_timplements" value="no" unchecked="no"/>no
+             <br/>
+             <br/>
+             <b>class </b><input name="name" value="main"/><b></b>
+             <input type="checkbox" name="is_name" value="no" unchecked="no"/>no
+             <br/>
+             <b>: virtual public </b><input name="implements" value="TImplements"/><b>,</b>
+             <input type="checkbox" name="is_implements" value="no" unchecked="no"/>no
+             <br/>
+             <b>public</b><input name="extends" value="TExtends"/><b>{</b>
+             <input type="checkbox" name="is_extends" value="no" unchecked="no"/>no
+             <br/>
+             <b>};</b> /// class<br/>
+             <br/>
+             <b>}</b> /// namespace<br/>
+
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="main-hpp-cpp.t?this=main-hpp-cpp.t">main-hpp-cpp.t</option>
+             <option value="/sthenode-cgi/cgi?this=/sthenode-cgi/cgi">cgi parameters</option>
+             <option value="/sthenode-cgi/cgicatch?this=/sthenode-cgi/cgicatch">catch cgi parameters</option>
+             <option value=""></option>
+             <option value="http://localhost:8080/sthenode/templates/t/cpp/class-hpp-cpp.t?this=http://localhost:8080/sthenode/templates/t/cpp/class-hpp-cpp.t">localhost port 8080</option>
+             <option value="https://localhost:4433/sthenode/templates/t/cpp/class-hpp-cpp.t?this=https://localhost:4433/sthenode/templates/t/cpp/class-hpp-cpp.t">localhost port 4433</option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr></div>
+
+            <table><tr>
+            <td><a href="run-hpp-cpp.html"><b>int run(int argc, char_t** argv, char_t** env)</b></a></td>
+            <td width="20"/>
+            
+            <td><a href="class-hpp-cpp.html">C++ <b>class {}</b></a></td>
+            <td width="20"/>
+
+            <td><a href="http://localhost/source/sthenode"><b>/sthenode/</b></a></td>
+            <td width="20"/>
+            
+            <td><a href=".."><b>..<b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

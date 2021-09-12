@@ -1,0 +1,117 @@
+<!--========================================================================-->
+<!-- Copyright (c) 1988-2019 $organization$                                 -->
+<!--                                                                        -->
+<!-- This software is provided by the author and contributors ``as is''     -->
+<!-- and any express or implied warranties, including, but not limited to,  -->
+<!-- the implied warranties of merchantability and fitness for a particular -->
+<!-- purpose are disclaimed. In no event shall the author or contributors   -->
+<!-- be liable for any direct, indirect, incidental, special, exemplary,    -->
+<!-- or consequential damages (including, but not limited to, procurement   -->
+<!-- of substitute goods or services; loss of use, data, or profits; or     -->
+<!-- business interruption) however caused and on any theory of liability,  -->
+<!-- whether in contract, strict liability, or tort (including negligence   -->
+<!-- or otherwise) arising in any way out of the use of this software,      -->
+<!-- even if advised of the possibility of such damage.                     -->
+<!--                                                                        -->
+<!--   File: html-form.html                                                 -->
+<!--                                                                        -->
+<!-- Author: $author$                                                       -->
+<!--   Date: 1/29/2019                                                      -->
+<!--========================================================================-->
+<html>
+    <!--========================================================================-->
+    <!-- head                                                                   -->
+    <!--========================================================================-->
+    <head>
+        <title>Nadir - Create HTML Form</title>
+    
+        <!--========================================================================-->
+        <!-- style                                                                  -->
+        <!--========================================================================-->
+        <link rel="stylesheet" type="text/css" href="../css/html-form.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--========================================================================-->
+        <!-- script                                                                 -->
+        <!--========================================================================-->
+        <script type="text/javascript" src="../js/html-form.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    
+    <!--========================================================================-->
+    <!-- body                                                                   -->
+    <!--========================================================================-->
+    <body>
+        <a href="html-form.html"><h3>Create HTML Form</h3></a>
+
+        <!--========================================================================-->
+        <!-- form                                                                   -->
+        <!--========================================================================-->
+        <form
+         Name="Form"
+         Action="form-html.t"
+         Method="POST"
+         Enctype="application/x-www-form-urlencoded"
+         Accept-charset="UTF-8"
+         OnSubmit="return setFormSubmit(getFormValue('FormAction','Form'),getFormValue('FormMethod','Form'),'Form');">
+            <div class="form"><hr/>
+
+            Name: <input name="Name" value="Form"></input>
+                  <input type="checkbox" name="is_Name" value="no" unchecked="checked">no</input><br/>
+            Target: <input name="Target" value=""></input>
+                  <input type="checkbox" name="is_Target" value="no" unchecked="checked">no</input><br/>
+            Action: <input name="Action" value="form-html.t"></input>
+                  <input type="checkbox" name="is_Action" value="no" unchecked="checked">no</input><br/>
+            Method: <input name="Method" value="POST"></input>
+                  <input type="checkbox" name="is_Method" value="no" unchecked="checked">no</input><br/>
+            Enctype: <input name="Enctype" value="application/x-www-form-urlencoded"></input>
+                  <input type="checkbox" name="is_Enctype" value="no" unchecked="checked">no</input><br/>
+            Accept-charset: <input name="Accept-charset" value="UTF-8"></input>
+                  <input type="checkbox" name="is_Accept-charset" value="no" unchecked="checked">no</input><br/>
+            Accept: <input name="Accept" value=""></input>
+                  <input type="checkbox" name="is_Accept" value="no" unchecked="checked">no</input><br/>
+            Autocomplete: <input name="Autocomplete" value=""></input>
+                  <input type="checkbox" name="is_Autocomplete" value="no" unchecked="checked">no</input><br/>
+            Novalidate: <input name="Novalidate" value=""></input>
+                  <input type="checkbox" name="is_Novalidate" value="no" unchecked="checked">no</input><br/>
+            Fields: <input name="Fields" value="Name;Target;Action;Method;Enctype;Accept-charset;Accept;Autocomplete;Novalidate;Fields;OnSubmit"></input>
+                  <input type="checkbox" name="is_Fields" value="no" unchecked="checked">no</input><br/>
+            OnSubmit: <input name="OnSubmit" value="return setFormSubmit(getFormValue('FormAction','Form'),getFormValue('FormMethod','Form'),'Form');"></input>
+                  <input type="checkbox" name="is_OnSubmit" value="no" unchecked="checked">no</input><br/><br/>
+
+
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value=""></option>
+            </select><br/> 
+            Action: <select name="FormAction">
+            <option value="form-html.t">form-html.t</option>
+            <option value="/coral-cgi/cgi">/coral-cgi/cgi</option>
+            <option value="/xde-cgi/cgi">/xde-cgi/cgi</option>
+            <option value=""></option>
+            </select><br/> 
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/>
+
+            <br/>
+            <input type="submit" name="submit" value="submit"/>
+            <hr/></div>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td><table cellpadding="0" cellspacing="10" border="0">
+                        <tr>
+                        <td><a href="../..">/framework/</a></td>
+                        </tr>
+                </table></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
