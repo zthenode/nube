@@ -1,0 +1,159 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: xthenode-gcc-Makefile.html
+===
+=== Author: $author$
+===   Date: 7/7/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Create Gcc Makefile Project</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/xthenode-html.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/xthenode-html.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="xthenode-gcc-Makefile.html"><h3>Create Gcc Makefile Project</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="Gcc-Makefile.t" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+             File: <input name="File" value=""/> [Makedefines | Makefile | Makerules | Makedirs]<br/>
+    
+             </br>
+             Depends: <input name="Depends" value=""/><br/>
+             Framework: <input name="Framework" value=""/></br>
+             Version: <input name="version_Major" value="0"/>
+             .<input name="version_Minor" value="0"/>
+             .<input name="version_Release" value="0"/><br/>
+             Target: <input name="Target" value=""/><br/>
+             Os: <input name="Os_input" value=""/><select name="Os">
+             <option value=""></option>
+             <option value="Linux">Linux</option>
+             <option value="MacOSX">MacOSX</option>
+             <option value="Windows">Windows</option>
+             </select> [Linux]<input type="checkbox" name="IsOs" value="no" checked="yes"/>no<br/>
+             Style: <input name="Style" value=""/> [xos]<input type="checkbox" name="IsStyle" value="no" checked="yes"/>no<br/>
+             Language: <input name="Language" value=""/> [cpp]<input type="checkbox" name="IsLanguage" value="no" checked="yes"/>no<br/>
+             Template: <select name="FormTemplate">
+             <option value="Gcc-Makefile.t">Makefile</option>
+             <option value="os-Gcc-Makefile.t">Os-Makefile</option>
+             <option value="build-Gcc-Makefile.t">Build-Makefile</option>
+             <option value=""/>
+             <option value="lib-Gcc-Makefile.t">Library-Makefile</option>
+             <option value="os-lib-Gcc-Makefile.t">Os-Library-Makefile</option>
+             <option value=""/>
+             <option value="exe-Gcc-Makefile.t">Executable-Makefile</option>
+             <option value="os-exe-Gcc-Makefile.t">Os-Executable-Makefile</option>
+             <option value=""/>
+             <option value="slib-Gcc-Makefile.t">Shared-Library-Makefile</option>
+             <option value="os-slib-Gcc-Makefile.t">Os-Shared-Library-Makefile</option>
+             <option value=""/>
+             <option value="Gcc-Makedefines.t">Makedefines</option>
+             <option value="build-Gcc-Makedefines.t">Build-Makedefines</option>
+             <option value=""/>
+             <option value="Gcc-Makerules.t">Makerules</option>
+             <option value="Gcc-Makedirs.t">Makedirs</option>
+             <option value=""/>
+             <option value="meta-Gcc-Makefile.t">Meta-Makefile</option>
+             <option value="meta-os-Gcc-Makefile.t">Meta-Os-Makefile</option>
+             <option value=""/>
+             <option value="meta-Gcc-Makedefines.t">Meta-Makedefines</option>
+             <option value="meta-Gcc-Makerules.t">Meta-Makerules</option>
+             <option value="meta-Gcc-Makedirs.t">Meta-Makedirs</option>
+             <option value="meta-config.t">Meta-config</option>
+             <option value=""/>
+             <option value="thirdparty-Gcc-Makefile.t">Thirdparty-Makefile</option>
+             </select><br/>
+    
+             <br/>
+             Organization: <input name="Organization" value="$organization$"/><br/>
+             Author: <input name="Author" value="$author$"/><br/>
+             Date: <input name="Date" value=""/><br/>
+
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="Gcc-Makefile.t">Gcc-Makefile.t</option>
+             <option value="/sthenode-cgi/cgi">cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr></div>
+
+            <table><tr>
+                <td><a href="../cxx/xthenode-hxx-cxx.html"><b>Create C/C++ File</b></a></td>
+                <td><a href="../html/xthenode-html.html"><b>Create HTML File</b></a></td>
+                <td><a href="../css/xthenode-css.html"><b>Create CSS File</b></a></td>
+                <td><a href="../js/xthenode-js.html"><b>Create JS File</b></a></td>
+                <td><a href="../t/xthenode-t.html"><b>Create T File</b></a></td>
+                </tr><tr>
+                <td><a href="../QtCreator/xthenode-QtCreator-pro.html"><b>Create QtCreator Project</b></a></td>
+                <td><a href="../VisualStudio/xthenode-vsprops.html"><b>Create VisualStudio props</b></a></td>
+                <td><a href="../../../../../.."><b>/xthenode/</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

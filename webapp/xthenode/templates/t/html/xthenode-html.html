@@ -1,0 +1,121 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: xthenode-html.html
+===
+=== Author: $author$
+===   Date: 7/7/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Create HTML File</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/xthenode-html.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/xthenode-html.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="xthenode-html.html"><h3>Create HTML File</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="html.t" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+            <b>&lt;?xml version="</b><input name="XmlVersion" value="1.0"/><b>" encoding="</b><input name="XmlEncoding" value="utf-8"/><b>"?&gt;</b><br/>
+            <b>&lt;!--</b> File: <input name="File" value="xthenode-html"/> <b>--&gt;</b><br/>
+            <b>&lt;html&gt;</b>
+            <b>&lt;head&gt;</b>
+            <b>&lt;title&gt;</b><input name="Framework" value="Xthenode"/> - <input name="Title" value="Create HTML File"/><b>&lt;/title&gt;</b><br/>
+            <b>&lt;style</b> type=&quot;<input name="StyleType" value="text/css"/>&quot;<b>&gt;</b><input name="Style" value=""/><b>&lt;/style&gt;</b><b>&lt;link</b> href=&quot;<input name="StyleHref" value="../css/xthenode-html.css"/>&quot;<b>&gt;</b><b>&lt;/link&gt;</b><br/>
+            <b>&lt;script</b> type=&quot;<input name="ScriptType" value="text/javascript"/>&quot; src=&quot;<input name="ScriptSrc" value="../js/xthenode-html.js"/>&quot;<b>&gt;</b><input name="Script" value=""/><b>&lt;/script&gt;</b>
+            <b>&lt;/head&gt;</b><br/>
+            <b>&lt;body&gt;&lt;form&gt;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</b><br/>
+            Template: <select name="FormTemplate">
+            <option value="html.t">HTML file</option>
+            <option value="Xthenode-html.t">Xthenode HTML file</option>
+            <option value="/sthenode-cgi/cgi">cgi parameters</option>
+            <option value=""/>
+            </select>
+            <br/>
+
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="html.t">html.t</option>
+             <option value="/sthenode-cgi/cgi">cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr></div>
+
+            <table><tr>
+                <td><a href="../QtCreator/xthenode-QtCreator-pro.html"><b>Create QtCreator Project</b></a></td>
+                <td><a href="../Makefile/xthenode-gcc-Makefile.html"><b>Create Gcc Makefile Project</b></a></td>
+                <td><a href="../cxx/xthenode-hxx-cxx.html"><b>Create C/C++ File</b></a></td>
+                <td><a href="../css/xthenode-css.html"><b>Create CSS File</b></a></td>
+                <td><a href="../js/xthenode-js.html"><b>Create JS File</b></a></td>
+                <td><a href="../t/xthenode-t.html"><b>Create T File</b></a></td>
+                <td><a href="../../../../../.."><b>/xthenode/</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

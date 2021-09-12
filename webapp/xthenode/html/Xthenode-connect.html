@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2020 $organization$
+===
+=== This software is provided by the author and contributors ``as is''
+=== and any express or implied warranties, including, but not limited to,
+=== the implied warranties of merchantability and fitness for a particular
+=== purpose are disclaimed. In no event shall the author or contributors
+=== be liable for any direct, indirect, incidental, special, exemplary,
+=== or consequential damages (including, but not limited to, procurement
+=== of substitute goods or services; loss of use, data, or profits; or
+=== business interruption) however caused and on any theory of liability,
+=== whether in contract, strict liability, or tort (including negligence
+=== or otherwise) arising in any way out of the use of this software,
+=== even if advised of the possibility of such damage.
+===
+===   File: Xthenode-connect.html
+===
+=== Author: $author$
+===   Date: 2/3/2020
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Connect to</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-dropdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-logo.css"></link>
+        <style type="text/css">
+        </style>
+
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Xthenode.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Xthenode-tools.html', 'Xthenode-connect.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Xthenode-logo.html">
+        <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Xthenode-header.html">
+        <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Xthenode-popdown.html">
+        <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Xthenode-dropdown.html">
+        <script>includeHTML('includeDropdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Xthenode-connect.html">Connect to</a></li>
+            <li class="home"><div><a href="Xthenode.html">Home</a></div></li>
+            <li class="home"><div><a href="Xthenode-tools.html">Tools</a></div></li>
+        </ul>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="Xthenode-connect.html"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form','Xthenode-connect.html'),getFormValue('FormMethod','Form','POST'),'Form')">
+            <div class="form">
+
+            Location: <select name="FormTemplate">
+            <option value=""/>
+            <option value="Xthenode-connect.html">Connect to</option>
+            <option value=""/>
+            <option value="http://localhost:8080/source/">localhost:8080/source/</option>
+            <option value="http://localhost:8080/stop/">localhost:8080/stop/</option>
+            <option value="http://localhost:8080/restart/">localhost:8080/restart/</option>
+            <option value=""/>
+            <option value="https://localhost:4433/source/">https://localhost:4433/source/</option>
+            <option value="https://localhost:4433/stop/">https://localhost:4433/stop/</option>
+            <option value="https://localhost:4433/restart/">https://localhost:4433/restart/</option>
+            <option value=""/>
+            <option value="/porta-cgi/porta">porta (/porta-cgi/porta)</option>
+            <option value="/porta-cgi/cgi">cgi parameters (/porta-cgi/cgi)</option>
+            <option value="/porta-cgi/cgicatch">catch cgi parameters (/porta-cgi/cgicatch)</option>
+            <option value=""/>
+            <option value="/coral-cgi/coral">coral (/coral-cgi/coral)</option>
+            <option value="/coral-cgi/hellocgi">hello cgi (/coral-cgi/hellocgi)</option>
+            <option value="/coral-cgi/cgi">cgi parameters (/coral-cgi/cgi)</option>
+            <option value="/coral-cgi/cgicatch">catch cgi parameters (/coral-cgi/cgicatch)</option>
+            <option value=""/>
+            <option value="https://localhost/xthenode-cgi/cgi">cgi parameters (https://localhost)</option>
+            <option value="https://localhost/xthenode-cgi/cgicatch">catch cgi parameters (https://localhost)</option>
+            <option value=""/>
+            <option value="/xthenode-cgi/cgi">cgi parameters</option>
+            <option value="/xthenode-cgi/cgicatch">catch cgi parameters</option>
+            </select>&nbsp;&nbsp;[Connect to]
+            <br/>
+
+            <br/>
+            Content-Type: <select name="content_type">
+            <option value=""></option>
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select>&nbsp;&nbsp;[text]<br/>
+            Action: <select name="FormAction">
+            <option value=""/>
+            <option value="Xthenode-connect.html">Connect to</option>
+            <option value=""></option>
+            <option value="/xthenode-cgi/cgi">cgi parameters</option>
+            <option value="/xthenode-cgi/cgicatch">catch cgi parameters</option>
+            </select>&nbsp;&nbsp;[Connect to]<br/>
+            Method: <select name="FormMethod">
+            <option value=""></option>
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select>&nbsp;&nbsp;[POST]<br/><br/>
+
+            <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>

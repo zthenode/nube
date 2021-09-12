@@ -1,0 +1,140 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: xthenode-vsprops.html
+===
+=== Author: $author$
+===   Date: 8/3/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Create VisualStudio props File</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/xthenode-html.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/xthenode-html.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="xthenode-vsprops.html"><h3>Create VisualStudio props File</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="vsprops-vsprops.t" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+            File: <input name="File" value=""></input>
+            <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input><br/>
+            Template: <select name="FormTemplate" value="">
+            <option value="vsprops-vsprops.t">vsprops.vsprops (VisualStudio-2005...2008)</option>
+            <option value="vcproj-vsprops.t">vcproj.vsprops (VisualStudio-2005...2008)</option>
+            <option value="vcversion-vsprops.t">vcversion.vsprops (VisualStudio-2005...2008)</option>
+            <option value=""></option>
+            <option value="props-props.t">props.props (VisualStudio-2010...)</option>
+            <option value="vcxproj-props.t">vcxproj.props (VisualStudio-2010...)</option>
+            <option value="vcversion-props.t">vcversion.props (VisualStudio-2010...)</option>
+            <option value=""></option>
+            </select>
+            </select>
+            <input type="checkbox" name="is_Template" value="no" unchecked="checked">no</input><br/>
+            VCVersion: <select name="VCVersion" value="">
+            <option value=""></option>
+            <option value="vc8">vc8 (VisualStudio-2005)</option>
+            <option value="vc9">vc9 (VisualStudio-2008)</option>
+            <option value=""></option>
+            <option value="vc10">vc10 (VisualStudio-2010)</option>
+            <option value="vc14">vc14 (VisualStudio-2015)</option>
+            <option value="vc15">vc15 (VisualStudio-2017)</option>
+            </select>
+            <input type="checkbox" name="is_VCVersion" value="no" unchecked="checked">no</input><br/>
+
+            <br/>
+            Group: <input name="Group" value=""></input>
+            <input type="checkbox" name="is_Group" value="no" unchecked="checked">no</input><br/>
+            Name: <input name="Name" value="">[Framework]</input>
+            <input type="checkbox" name="is_Name" value="no" unchecked="checked">no</input><br/>
+            Version: <input name="Version" value=""></input>
+            <input type="checkbox" name="is_Version" value="no" unchecked="checked">no</input><br/>
+            Depends: <input name="Depends" value="">[Depends]</input>
+            <input type="checkbox" name="is_Depends" value="no" unchecked="checked">no</input><br/>
+
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="vsprops-vsprops.t">vsprops-vsprops.t</option>
+             <option value="/sthenode-cgi/cgi">cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr></div>
+
+            <table><tr>
+            <td><a href="../cxx/xthenode-hxx-cxx.html"><b>Create C/C++ File</b></a></td>
+            <td><a href="../html/xthenode-html.html"><b>Create HTML File</b></a></td>
+            <td><a href="../css/xthenode-css.html"><b>Create CSS File</b></a></td>
+            <td><a href="../js/xthenode-js.html"><b>Create JS File</b></a></td>
+            <td><a href="../t/xthenode-t.html"><b>Create T File</b></a></td>
+            </tr><tr>
+            <td><a href="../QtCreator/xthenode-QtCreator-pro.html"><b>Create QtCreator Project</b></a></td>
+            <td><a href="../Makefile/xthenode-gcc-Makefile.html"><b>Create Gcc Makefile Project</b></a></td>
+            <td><a href="../../../../../.."><b>/xthenode/</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

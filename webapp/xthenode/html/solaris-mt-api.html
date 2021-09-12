@@ -1,0 +1,1469 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: solaris-mt-api.html
+===
+=== Author: $author$
+===   Date: 7/21/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Solaris - Multithreaded API</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Xthenode.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body xclass="body">
+        <h3><a href="solaris-mt-api.html">Solaris Multithreaded API</a></br>
+        <a href="https://docs.oracle.com/cd/E86824_01/html/E54766/makehtml-id-6.html">https://docs.oracle.com/cd/E86824_01/html/E54766/makehtml-id-6.html</a></h3>
+
+<br/><table border="1">
+<tr>
+<th colspan="2" scope="col" align="left" valign="bottom">
+<p>Threads &nbsp;</p>
+</th>
+</tr>
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_create<br/>
+(void *stack_base, size_t stack_size, void *(*start_func) (void*),<br/> 
+ void *arg, long flags, thread_t *new_thread_ID)</b></kbd>
+</p>
+<pre>
+#include &lt;thread.h&gt;
+
+Thread creation adds a new thread of control to the current process. 
+The procedure main() is a single thread of control. Each thread 
+executes concurrently with all other threads within the calling 
+process and with other threads from other active processes.
+
+Although a newly created thread shares all of the calling process's 
+global data with the other threads in the process, it has its own 
+set of attributes and private execution stack. The new thread 
+inherits the calling thread's signal mask and scheduling priority. 
+Pending signals for a new thread are not inherited and will be empty.
+
+The call to create a thread takes the address of a user-defined 
+function, specified by start_func, as one of its arguments. 
+This function is the complete execution routine for the new thread.
+
+The lifetime of a thread begins with the successful return from 
+thr_create(), which calls start_func( ) and ends with one of the 
+following:
+
+the normal completion of start_func( ),
+
+an explicit call to thr_exit(3C), or
+
+the conclusion of the calling process (see exit(2)).
+
+The new thread performs by calling the function defined by start_func 
+with only one argument, arg. If more than one argument needs to be 
+passed to start_func, the arguments can be packed into a structure, 
+the address of which can be passed to arg.
+
+If start_func returns, the thread terminates with the exit status 
+set to the start_func return value (see thr_exit(3C)).
+
+When the thread from which main() originated returns, the effect 
+is the same as if an implicit call to exit() were made using the 
+return value of main() as the exit status. This behavior differs 
+from a start_func return. If main() calls thr_exit(3C), only the 
+main thread exits, not the entire process.
+
+If the thread creation fails, a new thread is not created and the 
+contents of the location referenced by the pointer to the new thread 
+are undefined.
+
+The flags argument specifies which attributes are modifiable for the 
+created thread. The value in flags is determined by the bitwise 
+inclusive-OR of the following:
+
+THR_BOUND
+This flag is obsolete and is maintained for compatibility.
+
+THR_DETACHED
+This flag affects the detachstate attribute of the thread. The new 
+thread is created detached. The exit status of a detached thread 
+is not accessible to other threads. Its thread ID and other 
+resources may be re-used as soon as the thread terminates. 
+thr_join(3C) will not wait for a detached thread.
+
+THR_NEW_LWP
+This flag is obsolete and is maintained for compatibility.
+
+THR_SUSPENDED
+This flag affects the suspended attribute of the thread. The new 
+thread is created suspended and will not execute start_func until 
+it is started by thr_continue().
+
+THR_DAEMON
+This flag affects the daemon attribute of the thread. In addition 
+to being created detached (THR_DAEMON implies THR_DETACHED), the 
+thread is marked as a daemon. Daemon threads do not interfere with 
+the exit conditions for a process. A process will terminate when 
+the last non-daemon thread exits or the process calls exit(2). 
+Also, a thread that is waiting in thr_join(3C) for any thread to 
+terminate will return EDEADLK when all remaining threads in the 
+process are either daemon threads or other threads waiting in 
+thr_join(). Daemon threads are most useful in libraries that want 
+to use threads.
+
+/*
+thread_t tid;
+void *start_func(void *), *arg;
+thr_create(NULL, 0, start_func, arg, 0, &tid);
+thr_create(NULL, 0, start_func, arg, THR_DETACHED, NULL);
+*/
+</pre>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_create()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>void thr_exit(void *status)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_exit()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_join<br/>
+(thread_t thread, thread_t *departed, void **status)</b></kbd>
+</p>
+<pre>
+The thr_join() function suspends processing of the calling thread 
+until the target thread completes. The thread argument must be a 
+member of the current process and cannot be a detached thread. 
+See thr_create(3C).
+
+If two or more threads wait for the same thread to complete, all 
+will suspend processing until the thread has terminated, and then 
+one thread will return successfully and the others will return 
+with an error of ESRCH. The thr_join() function will not block 
+processing of the calling thread if the target thread has already 
+terminated.
+
+If a thr_join() call returns successfully with a non-null status 
+argument, the value passed to thr_exit(3C) by the terminating 
+thread will be placed in the location referenced by status.
+
+If the target thread ID is 0, thr_join() finds and returns the 
+status of a terminated undetached thread in the process. If no 
+such thread exists, it suspends processing of the calling thread 
+until a thread for which no other thread is waiting enters that 
+state, at which time it returns successfully, or until all other 
+threads in the process are either daemon threads or threads 
+waiting in thr_join(), in which case it returns EDEADLK. See NOTES.
+
+If departed is not NULL, it points to a location that is set to 
+the ID of the terminated thread if thr_join() returns successfully.
+
+If successful, thr_join() returns 0. Otherwise, an error number 
+is returned to indicate the error.
+
+EDEADLK
+A joining deadlock would occur, such as when a thread attempts 
+to wait for itself, or the calling thread is waiting for any 
+thread to exit and only daemon threads or waiting threads 
+exist in the process.
+
+ESRCH
+No undetached thread could be found corresponding to the given 
+thread ID.
+
+</pre>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_join()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>void thr_yield(void)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>sched_yield()</b></kbd>  POSIX.4</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>thread_t thr_self(void)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_self()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>in thr_kill(thread_t thread, int sig)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_kill()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_sigsetmask(int how, const sigset_t *set, sigset_t *oset)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_sigmask()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_setprio(thread_t target_thread, int priority)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_setschedparam()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_getprio(thread_t target_thread, int *priority)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_getschedparam()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_setconcurrency(int new_level)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_setconcurrency()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_getconcurrency()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_getconcurrency()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_suspend(thread_t target_thread)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>-&nbsp;</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_continue(thread_t target_thread)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>-&nbsp;</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_keycreate(thread_key_t *keyp, void (*destructor)(void *))</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_key_create()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_key_delete()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_setspecific(thread_key_t key, void *value)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_setspecific()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int thr_getspecific(thread_key_t key, void **valuep)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_getspecific()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_once()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_equal()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cancel()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_testcancel()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cleanup_push()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cleanup_pop()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_setcanceltype()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_setcancelstate()</b></kbd>
+</p>
+</td>
+</tr>
+</table>
+
+<br/><table border="1">
+<tr>
+<th colspan="2" scope="col" align="left" valign="bottom">
+<p>Mutexes &nbsp;</p>
+</th>
+</tr>
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int mutex_lock(mutex_t *mp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_lock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int mutex_unlock(mutex_t *mp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_unlock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int mutex_trylock(mutex_t *mp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_trylock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int mutex_init(mutex_t *mp, int type, void *arg)</b></kbd>
+</p>
+<pre>
+#include &lt;thread.h&gt; 
+#include &lt;synch.h&gt;
+
+The mutex_init() function initializes the mutex referenced 
+by mp with the type specified by type . Upon successful 
+initialization the state of the mutex becomes initialized 
+and unlocked. Only the attribute type LOCK_PRIO_PROTECT 
+uses arg. The type argument must be one of the following:
+
+USYNC_THREAD
+The mutex can synchronize threads only in this process.
+
+USYNC_PROCESS
+The mutex can synchronize threads in this process and 
+other processes. The object initialized with this attribute 
+must be allocated in memory shared between processes, either 
+in System V shared memory (see shmop(2)) or in memory mapped 
+to a file (see mmap(2)). If the object is not allocated in 
+such shared memory, it will not be shared between processes.
+
+The type argument can be augmented by the bitwise-inclusive- 
+OR of zero or more of the following flags:
+
+LOCK_ROBUST
+The mutex can synchronize threads robustly. At the time of 
+thread or process death, either by calling thr_exit() or 
+exit() or due to process abnormal termination, the lock is 
+unlocked if is held by the thread or process. The next owner 
+of the mutex will acquire it with an error return of EOWNERDEAD. 
+The application must always check the return value from 
+mutex_lock() for a mutex of this type. The new owner of this 
+mutex should then attempt to make the state protected by the 
+mutex consistent, since this state could have been left 
+inconsistent when the last owner died. If the new owner is able 
+to make the state consistent, it should call mutex_consistent() 
+to restore the state of the mutex and then unlock the mutex. 
+All subsequent calls to mutex_lock()will then behave normally. 
+Only the new owner can make the mutex consistent. If for any 
+reason the new owner is not able to make the state consistent, 
+it should not call mutex_consistent() but should simply unlock 
+the mutex. All waiting processes will be awakened and all 
+subsequent calls to mutex_lock() will fail in acquiring the mutex 
+with an error value of ENOTRECOVERABLE. If the thread or process 
+that acquired the lock with EOWNERDEAD terminates without unlocking 
+the mutex, the next owner will acquire the lock with an error 
+value of EOWNERDEAD.
+
+The memory for the object to be initialized with this attribute 
+must be zeroed before initialization. Any thread or process 
+interested in the robust lock can call mutex_init() to potentially 
+initialize it, provided that all such callers of mutex_init() 
+specify the same set of attribute flags. In this situation, if 
+mutex_init() is called on a previously initialized robust mutex, 
+mutex_init() will not reinitialize the mutex and will return the 
+error value EBUSY.
+
+LOCK_RECURSIVE
+A thread attempting to relock this mutex without first unlocking 
+it will succeed in locking the mutex. The mutex must be unlocked 
+as many times as it is locked.
+
+LOCK_ERRORCHECK
+Unless LOCK_RECURSIVE is also set, a thread attempting to relock 
+this mutex without first unlocking it will return with an error 
+rather than deadlocking itself. A thread attempting to unlock 
+this mutex without first owning it will return with an error.
+
+LOCK_PRIO_INHERIT
+When a thread is blocking higher priority threads because of 
+owning one or more mutexes with the LOCK_PRIO_INHERIT attribute, 
+it executes at the higher of its priority or the priority of the 
+highest priority thread waiting on any of the mutexes owned by 
+this thread and initialized with this attribute.
+
+LOCK_PRIO_PROTECT
+When a thread owns one or more mutexes initialized with the 
+LOCK_PRIO_PROTECT attribute, it executes at the higher of 
+its priority or the highest of the priority ceilings of all 
+the mutexes owned by this thread and initialized with this 
+attribute, regardless of whether other threads are blocked 
+on any of these mutexes. When this attribute is specified, 
+arg must point to an int containing the priority ceiling.
+
+See pthread_mutexattr_getrobust(3C) for more information about 
+robust mutexes. The LOCK_ROBUST attribute is the same as the 
+POSIX PTHREAD_MUTEX_ROBUST attribute.
+
+See pthread_mutexattr_settype(3C) for more information on 
+recursive and error checking mutex types. The combination 
+(LOCK_RECURSIVE | LOCK_ERRORCHECK ) is the same as the POSIX 
+PTHREAD_MUTEX_RECURSIVE type. By itself, LOCK_ERRORCHECK is 
+the same as the POSIX PTHREAD_MUTEX_ERRORCHECK type.
+
+The LOCK_PRIO_INHERIT attribute is the same as the POSIX 
+PTHREAD_PRIO_INHERIT attribute. The LOCK_PRIO_PROTECT attribute 
+is the same as the POSIX PTHREAD_PRIO_PROTECT attribute. 
+See pthread_mutexattr_getprotocol(3C), 
+pthread_mutexattr_getprioceiling(3C), and 
+pthread_mutex_getprioceiling(3C) for a full discussion. 
+The LOCK_PRIO_INHERIT and LOCK_PRIO_PROTECT attributes are 
+mutually exclusive. Specifying both of these attributes 
+causes mutex_init() to fail with EINVAL.
+
+Initializing mutexes can also be accomplished by allocating 
+in zeroed memory (default), in which case a type of 
+USYNC_THREAD is assumed. In general, the following rules 
+apply to mutex initialization:
+
+- The same mutex must not be simultaneously initialized by 
+  multiple threads.
+  
+- A mutex lock must not be reinitialized while in use by 
+  other threads.
+
+These rules do not apply to LOCK_ROBUST mutexes. See the 
+description for LOCK_ROBUSTabove. If default mutex attributes 
+are used, the macro DEFAULTMUTEX can be used to initialize 
+mutexes that are statically allocated.
+
+</pre>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_init()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int mutex_destroy(mutex_t *mp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_destroy()</b></kbd>                                              
+</p>
+</td>
+</tr>
+</table>
+
+<br/><table border="1">
+<tr>
+<th colspan="2" scope="col" align="left" valign="bottom">
+<p>Conditionals &nbsp;</p>
+</th>
+</tr>
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_wait(cond_t *cvp, mutex_t *mp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_wait()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_timedwait(cond_t *cvp, mutex_t *mp, timestruc_t *abstime)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_timedwait()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_reltimedwait(cond_t *cvp, mutex_t *mp, timestruc_t *reltime)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_timedwait_relative_np()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_signal(cond_t *cvp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_signal()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_broadcast(cond_t *cvp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_broadcast()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_init(cond_t *cvp, int type, void *arg)</b></kbd>
+</p>
+<pre>
+#include &lt;thread.h&gt; 
+#include &lt;synch.h&gt; 
+
+Condition variables and mutexes should be global. Condition 
+variables that are allocated in writable memory can synchronize 
+threads among processes if they are shared by the cooperating 
+processes (see mmap(2)) and are initialized for this purpose.
+
+The scope of a condition variable is either intra-process or 
+inter-process. This is dependent upon whether the argument is 
+passed implicitly or explicitly to the initialization of that 
+condition variable. A condition variable does not need to be 
+explicitly initialized. A condition variable is initialized 
+with all zeros, by default, and its scope is set to within the 
+calling process. For inter-process synchronization, a condition v
+ariable must be initialized once, and only once, before use.
+
+A condition variable must not be simultaneously initialized by 
+multiple threads or re-initialized while in use by other threads.
+
+Attributes of condition variables can be set to the default or 
+customized at initialization.
+
+The cond_init() function initializes the condition variable 
+pointed to by cvp. A condition variable can have several different 
+types of behavior, specified by type. No current type uses arg 
+although a future type may specify additional behavior parameters 
+with arg. The type argument c take one of the following values:
+
+USYNC_THREAD
+The condition variable can synchronize threads only in this process. 
+This is the default.
+
+USYNC_PROCESS
+The condition variable can synchronize threads in this process 
+and other processes. Only one process should initialize the 
+condition variable. The object initialized with this attribute 
+must be allocated in memory shared between processes, either 
+in System V shared memory (see shmop(2)) or in memory mapped 
+to a file (see mmap(2)). It is illegal to initialize the object 
+this way and to not allocate it in such shared memory.
+
+Initializing condition variables can also be accomplished by 
+allocating in zeroed memory, in which case, a type of 
+USYNC_THREAD is assumed.
+
+If default condition variable attributes are used, statically 
+allocated condition variables can be initialized by the macro DEFAULTCV.
+
+</pre>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_init()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int cond_destroy(cond_t *cvp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_cond_destroy()</b></kbd>
+</p>
+</td>
+</tr>
+</table>
+
+<br/><table border="1">
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rwlock_init()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_init()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rwlock_destroy()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_destroy()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rw_rdlock()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_rdlock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rw_wrlock()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_wrlock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rw_unlock()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_unlock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rw_tryrdlock()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_tryrdlock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>rw_trywrlock()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlock_trywrlock()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlockattr_init()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlockattr_destroy()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlockattr_getpshared()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_rwlockattr_setpshared()</b></kbd>
+</p>
+</td>
+</tr>
+</table>
+
+<br/><table border="1">
+<tr>
+<th colspan="2" scope="col" align="left" valign="bottom">
+<p>Semaphores &nbsp;</p>
+</th>
+</tr>
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int sema_init(sema_t *sp, unsigned int count, int type, void * arg)</b></kbd>
+</p>
+<pre>
+#include &lt;synch.h&gt;
+
+A semaphore is a non-negative integer count and is generally used to 
+coordinate access to resources. The initial semaphore count is set to 
+the number of free resources, then threads slowly increment and 
+decrement the count as resources are added and removed. If the 
+semaphore count drops to 0, which means no available resources, 
+threads attempting to decrement the semaphore will block until the 
+count is greater than 0.
+
+Semaphores can synchronize threads in this process and other processes 
+if they are allocated in writable memory and shared among the cooperating 
+processes (see mmap(2)), and have been initialized for this purpose.
+
+Semaphores must be initialized before use; semaphores pointed to by sp 
+to count are initialized by sema_init (). The type argument can assign 
+several different types of behavior to a semaphore. No current type 
+uses arg, although it may be used in the future.
+
+The type argument may be one of the following:
+
+USYNC_PROCESS
+The semaphore can synchronize threads in this process and other 
+processes. Initializing the semaphore should be done by only one 
+process. A semaphore initialized with this type must be allocated 
+in memory shared between processes, either in Sys V shared memory 
+(see shmop(2)), or in memory mapped to a file (see mmap(2)). It is 
+illegal to initialize the object this way and not allocate it in 
+such shared memory. arg is ignored.
+
+USYNC_THREAD
+The semaphore can synchronize threads only in this process. The arg 
+argument is ignored. USYNC_THREAD does not support multiple mappings 
+to the same logical synch object. If you need to mmap() a synch object 
+to different locations within the same address space, then the synch 
+object should be initialized as a shared object USYNC_PROCESS for 
+Solaris threads and PTHREAD_PROCESS_PRIVATE for POSIX threads.
+
+Return Values:
+
+EINVAL
+The sp argument does not refer to a valid semaphore.
+
+EFAULT
+Either the sp or arg argument points to an illegal address.
+
+The sema_wait() function will fail if:
+
+EINTR
+The wait was interrupted by a signal or fork().
+
+The sema_trywait() function will fail if:
+
+EBUSY
+The semaphore pointed to by sp has a 0 count.
+
+The sema_post() function will fail if:
+
+EOVERFLOW
+The semaphore value pointed to by sp exceeds SEM_VALUE_MAX.
+
+</pre>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>sem_init()</b></kbd>   POSIX 1003.4</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int sema_destroy(sema_t *sp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>sem_destroy()</b></kbd>   POSIX 1003.4</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int sema_wait(sema_t *sp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>sem_wait()</b></kbd>   POSIX 1003.4</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int sema_post(sema_t *sp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>sem_post()</b></kbd>   POSIX 1003.4</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>int sema_trywait(sema_t *sp)</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>sem_trywait()</b></kbd>   POSIX 1003.4</p>
+</td>
+</tr>
+</table>
+
+<br/><table border="1">
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>fork1()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>fork()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_atfork()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>fork()</b></kbd> (multiple thread copy)</p>
+</td><td align="left" valign="top">
+<p>-&nbsp;</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutexattr_init()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutexattr_destroy()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>type()</b></kbd> argument in <kbd><b>cond_init()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutexattr_setpshared()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutexattr_getpshared()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_attr_settype()</b></kbd>                             
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_mutex_attr_gettype()</b></kbd>
+</p>
+</td>
+</tr>
+</table>
+
+<br/><table border="1">
+<tr>
+<th scope="col" align="left" valign="bottom">
+<p>Solaris Threads (libthread)&nbsp;</p>
+</th><th scope="col" align="left" valign="bottom">
+<p>POSIX Threads (libpthread)&nbsp;</p>
+</th>
+</tr>
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_condattr_init()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_condattr_destroy()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>type()</b></kbd> argument in <kbd><b>cond_init()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_condattr_setpshared()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_condattr_getpshared()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_init()</b></kbd>             
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_destroy()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>THR_BOUND flag in <kbd><b>thr_create()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setscope()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getscope()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setguardsize()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getguardsize()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>stack_size()</b></kbd> argument in <kbd><b>thr_create()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setstacksize()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getstacksize()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>
+<kbd><b>stack_addr()</b></kbd> argument in <kbd><b>thr_create()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setstackaddr()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getstackaddr()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>THR_DETACH flag in <kbd><b>thr_create()</b></kbd>
+</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setdetachstate()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getdetachstate()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setschedparam()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getschedparam()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setinheritsched()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getinheritsched()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_setsschedpolicy()</b></kbd>
+</p>
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top">
+<p>-&nbsp;</p>
+</td><td align="left" valign="top">
+<p>
+<kbd><b>pthread_attr_getschedpolicy()</b></kbd> 
+</p>
+</td>
+</tr>
+</table>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <!--form
+         Name="Form" Action="t.t" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="t.t">html.t</option>
+             <option value="/sthenode-cgi/cgi">cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr></div>
+
+            <table><tr>
+                <td><a href="../../../../../.."><b>/xthenode/</b></a></td>
+            </tr></table>
+         </form-->
+    </body>
+</html>

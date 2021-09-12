@@ -1,0 +1,151 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: xthenode-hxx-cxx.html
+===
+=== Author: $author$
+===   Date: 7/7/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Create C/C++ File</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/xthenode-html.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/xthenode-html.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="xthenode-hxx-cxx.html"><h3>Create C/C++ File</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Action="hxx-cxx.t"
+         Method="POST" Name="Form"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+             File: <input name="File" value=""/>[%Class%]
+             <input type="radio" name="Extension" value="hxx" checked="checked">.hxx</input>
+             <input type="radio" name="Extension" value="cxx">.cxx</input>
+             <input type="radio" name="Extension" value="hpp">.hpp</input>
+             <input type="radio" name="Extension" value="cpp">.cpp</input>
+             <input type="radio" name="Extension" value="h">.h</input>
+             <input type="radio" name="Extension" value="c">.c</input>
+             <input type="checkbox" name="is_Extension" value="no" unchecked="">no</input>
+             <br/>
+             Template: <select name="FormTemplate">
+             <option value="class-hxx-cxx.t">C++ class</option>
+             <option value="h-hxx-c-cxx.t">C/C++ file</option>
+             <option value="hxx-cxx.t">C++ file</option>
+             <option value="h-c.t">C file</option>
+             <option value="/xthenode-cgi/cgi">cgi parameters</option>
+             <option value=""/>
+             </select>
+             <br/>
+             <br/>
+             
+            <b>#ifndef </b><input name="File_ifndef" value="xos"/><b></b>[xos]
+            <input type="checkbox" name="is_File_ifndef" value="no" unchecked=""/>no<br/>
+            <b>#include "</b><input name="Include" value="xos/base/Base.hxx"/><b>"</b>[xos/base/Base.hxx]
+            <input type="checkbox" name="is_Include" value="no" unchecked=""/>no<br/>
+            <b>#include &lt;</b><input name="Sys_include" value="string"/><b>&gt;</b>[string]
+            <input type="checkbox" name="is_Sys_include" value="no" checked="checked"/>no<br/>
+            <br/>
+            
+            <b>namespace</b> <input name="Namespace" value="xos"/>[xos] <b>{</b>
+            <input type="checkbox" name="is_Namespace" value="no" unchecked=""/>no<br/>
+            <br/>
+
+            <b>template &lt;</b> <input name="Template" value=""/><b>&gt;</b>
+            <input type="checkbox" name="is_Template" value="no" unchecked=""/>no<br/>
+            <b>class</b> <input name="Class" value=""/>[Class]
+            <input type="checkbox" name="is_Class" value="no" unchecked=""/>no<br/>
+            <b>: virtual public</b> <input name="Implements" value=""/>[Implement]
+            <input type="checkbox" name="is_Implements" value="no" unchecked=""/>no<br/>
+            <b>, public</b> <input name="Extends" value=""/>[Extend]
+            <input type="checkbox" name="is_Extends" value="no" unchecked=""/>no<br>
+            <b>{}; /// class</b><br/>
+            <br/>
+            <b>} /// namespace</b><br/>
+            <br/>
+
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="hxx-cxx.t">hxx-cxx.t</option>
+             <option value="/xthenode-cgi/cgi">cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr></div>
+
+            <table><tr>
+                <td><a href="../html/xthenode-html.html"><b>Create HTML File</b></a></td>
+                <td><a href="../css/xthenode-css.html"><b>Create CSS File</b></a></td>
+                <td><a href="../js/xthenode-js.html"><b>Create JS File</b></a></td>
+                <td><a href="../t/xthenode-t.html"><b>Create T File</b></a></td>
+                </tr><tr>
+                <td><a href="../QtCreator/xthenode-QtCreator-pro.html"><b>Create QtCreator Project</b></a></td>
+                <td><a href="../Makefile/xthenode-gcc-Makefile.html"><b>Create Gcc Makefile Project</b></a></td>
+                <td><a href="../VisualStudio/xthenode-vsprops.html"><b>Create VisualStudio props</b></a></td>
+                <td><a href="../../../../../.."><b>/xthenode/</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

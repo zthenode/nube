@@ -1,0 +1,186 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2020 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Xthenode-apache-httpd-conf-alias.html
+===
+=== Author: $author$
+===   Date: 8/9/2020
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Apache .conf Alias</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-dropdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Xthenode.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Xthenode-apache-tools.html', 'Xthenode-apache-httpd-conf-alias.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Xthenode-logo.html">
+            <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Xthenode-header.html">
+            <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Xthenode-dropdown.html">
+            <script>includeHTML('includeDropdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Xthenode-popdown.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Xthenode-apache-httpd-conf-alias.html">Create Apache .conf Alias</a></li>
+            <li><a href="Xthenode-apache-httpd-conf.html">Apache .conf</a></li>
+            <li class="home"><div><a href="Xthenode.html">Home</a></div></li>
+            <li class="home"><div><a href="Xthenode-tools.html">Tools</a></div></li>
+            <li class="home"><div><a href="Xthenode-apache-tools.html">Apache Tools</a></div></li>
+        </ul>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/Apache/httpd-conf-alias.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+            File: <input name="File" value="httpd-local.conf"></input>[httpd-local.conf]
+            <input type="checkbox" name="is_File" value="no" checked="checked">no</input>
+            <br/>
+            Template: <select name="FormTemplate">
+            <option value="../templates/t/Apache/httpd-conf-alias.t">Apache .conf Alias</option>
+            <option value=""></option>
+            <option value="../templates/t/t/functions.t">t functions</option>
+            <option value="../templates/t/t/parameters.t">t parameters</option>
+            <option value=""></option>
+            <option value="/xthenode-cgi/cgi">cgi parameters</option>
+            <option value="/xthenode-cgi/cgicatch">catch cgi parameters</option>
+            </select>
+            <br/>
+
+            <br/>
+            <b></b>Framework:<input name="Framework" value="framework"/><b></b>
+            <input type="checkbox" name="is_Framework" value="no" checked="checked">no</input>
+            <br/>
+
+            <br/>
+            <b>Alias</b>&nbsp;&nbsp;<b>/</b><input name="Alias" value="framework"/><b>/</b>
+            &nbsp;&nbsp;<b>"</b><input name="Alias_path" value="/home/user/source/framework/" size="40"/><b>"</b>
+            <input type="checkbox" name="is_Alias" value="no" unchecked="checked">no</input>
+            <br/>
+            <b>&lt;Directory</b>&nbsp;&nbsp;<b>"</b><input name="Directory" value="/home/user/source/framework/" size="40"/><b>"&gt;</b>
+            <input type="checkbox" name="is_Directory" value="no" checked="checked">no</input>
+            <br/><b>&lt;/Directory&gt;</b><br/>
+            <br/>
+            <b>ScriptAlias</b>&nbsp;&nbsp;<b>/</b><input name="ScriptAlias" value="framework-cgi"/><b>/</b>
+            &nbsp;&nbsp;<b>"</b><input name="ScriptAlias_path" value="/home/user/source/framework/build/" size="40"/><b>"</b>
+            <input type="checkbox" name="is_ScriptAlias" value="no" checked="checked">no</input>
+            <br/>
+            <b>&lt;Directory</b>&nbsp;&nbsp;<b>"</b><input name="ScriptDirectory" value="/home/user/source/framework/build" size="40"/><b>"&gt;</b>
+            <input type="checkbox" name="is_ScriptDirectory" value="no" checked="checked">no</input>
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>PassEnv </b><input name="PassEnv_HTTPD_HOST" value="HTTPD_HOST"/>
+            <input type="checkbox" name="is_PassEnv_HTTPD_HOST" value="no" checked="checked">no</input>
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>PassEnv </b><input name="PassEnv_HTTPD_USER" value="HTTPD_USER"/>
+            <input type="checkbox" name="is_PassEnv_HTTPD_USER" value="no" checked="checked">no</input>
+            <br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>PassEnv </b><input name="PassEnv_HTTPD_USER_HOME" value="HTTPD_USER_HOME"/>
+            <input type="checkbox" name="is_PassEnv_HTTPD_USER_HOME" value="no" checked="checked">no</input>
+            <br/><b>&lt;/Directory&gt;</b><br/>
+
+            <br/>
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select><br/>
+            Action: <select name="FormAction">
+            <option value="../templates/t/Apache/httpd-conf-alias.t">Apache .conf Alias</option>
+            <option value=""></option>
+            <option value="../templates/t/t/functions.t">t functions</option>
+            <option value="../templates/t/t/parameters.t">t parameters</option>
+            <option value=""></option>
+            <option value="/xthenode-cgi/cgi">cgi parameters</option>
+            <option value="/xthenode-cgi/cgicatch">catch cgi parameters</option>
+            </select><br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/><br/>
+
+            <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>

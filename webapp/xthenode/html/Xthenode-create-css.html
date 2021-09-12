@@ -1,0 +1,170 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Xthenode-create-css.html
+===
+=== Author: $author$
+===   Date: 7/9/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Xthenode - Create CSS File</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-dropdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Xthenode-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Xthenode.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Xthenode.html', 'Xthenode-create-css.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Xthenode-logo.html">
+        <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Xthenode-header.html">
+        <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Xthenode-popdown.html">
+        <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Xthenode-dropdown.html">
+        <script>includeHTML('includeDropdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Xthenode-create-css.html">Create .css File</a></li>
+            <li><a href="Xthenode-create-html.html">Create .html File</a></li>
+            <li><a href="Xthenode-create-js.html">Create .js File</a></li>
+            <li><a href="Xthenode-create-t.html">Create .t File</a></li>
+            <li class="home"><div><a href="Xthenode.html">Home</a></div></li>
+        </ul>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/css/css.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+            File: <input name="File" value="xthenode-css"></input>
+                  <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input><br/>
+            Organization: <input name="Organization" value=""></input>
+                  <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input><br/>
+            Author: <input name="Author" value=""></input>
+                  <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input><br/>
+            Template: <select name="FormTemplate">
+            <option value="../templates/t/css/css.t">css.t</option>
+            <option value="../templates/t/css/Application-css.t">Application-css.t</option>
+            <option value=""/>
+            <option value="/xthenode-cgi/cgi">cgi parameters</option>
+            <option value="/xthenode-cgi/cgicatch">catch cgi parameters</option>
+            <option value=""/>
+            <option value="http://localhost:8080/xthenode-http/http">http parameters</option>
+            <option value="http://localhost:8080/xthenode-http/httpcatch">catch http parameters</option>
+            </select>
+            <br/>
+
+            <br/>
+            <b></b>Application:<input name="Application" value="Application"/><b></b>
+            <input type="checkbox" name="is_Application" value="no" unchecked="checked">no</input><br/>
+            <b>.body { background-color:</b><input name="BGColor" value="white"/><b>;</b>
+            <input type="checkbox" name="is_BGColor" value="no" unchecked="checked">no</input><b> }</b><br/>
+            <b>.form { background-color:</b><input name="FormBGColor" value="lightgray"/><b>;</b>
+            <input type="checkbox" name="is_FormBGColor" value="no" unchecked="checked">no</input><b> }</b><br/>
+            
+            <br/>
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select><br/>
+            Action: <select name="FormAction">
+            <option value="../templates/t/css/css.t">css.t</option>
+            <option value=""></option>
+            <option value="/xthenode-cgi/cgi">cgi parameters</option>
+            <option value="/xthenode-cgi/cgicatch">catch cgi parameters</option>
+            <option value=""/>
+            <option value="http://localhost:8080/xthenode-http/http">http parameters</option>
+            <option value="http://localhost:8080/xthenode-http/httpcatch">catch http parameters</option>
+            <option value=""></option>
+            </select><br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><br/><br/>
+
+            <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>
