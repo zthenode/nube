@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Create-makefile.html
+===
+=== Author: $author$
+===   Date: 10/15/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Create - Makefile project</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Create.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-footer.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/html.js"></script>
+        <script type="text/javascript">
+        onLocationInit('Create.html','Create-makefile.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+    
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Create-logo.html">
+        <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Create-header.html">
+        <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Create-popdown-content.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Create-dropdown-content.html">
+        <script>includeHTML('includeDropdown');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Create-makefile.html">Makefile project</a></li>
+            <li><a href="Create-qtcreator.html">QtCreator project</a></li>
+            <li><a href="Create-html.html">Create .html file</a></li>
+            <li><a href="Create-t.html">Create .t file</a></li>
+            <li class="home"><div><a href="Create.html">Home</a></div></li>
+        </ul>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/makefile/makefile.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+                File: <input name="File" value=""></input>
+                <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input><br/>
+                Depends: <input name="Depends" value="">[Depends]</input>
+                <input type="checkbox" name="is_Depends" value="no" checked="checked">no</input><br/>
+                Framework: <input name="Framework" value="">[Framework]</input>
+                <input type="checkbox" name="is_Framework" value="no" unchecked="checked">no</input></br>
+                Version: <input name="version_Major" value="0"/>
+                .<input name="version_Minor" value="0"/>
+                .<input name="version_Release" value="0"/>
+                <input type="checkbox" name="is_Version" value="no" unchecked="checked">no</input><br/>
+                Target: <input name="Target" value="">[%Framework%]</input>
+                <input type="checkbox" name="is_Target" value="no" unchecked="checked">no</input><br/>
+                Os: <input name="Os_input" value=""/><select name="Os">
+                <option value=""></option>
+                <option value="Linux">Linux</option>
+                <option value="MacOSX">MacOSX</option>
+                <option value="Windows">Windows</option>
+                </select> [os]<input type="checkbox" name="IsOs" value="no" checked="yes"/>no<br/>
+                Template: <select name="FormTemplate">
+                <option value="../templates/t/makefile/gcc-makefile.t">Makefile</option>
+                <option value="../templates/t/makefile/os-gcc-makefile.t">Os Makefile</option>
+                <option value="../templates/t/makefile/build-gcc-makefile.t">Build Makefile</option>
+                <option value="../templates/t/makefile/gcc-makedefines.t">Makedefines</option>
+                <option value="../templates/t/makefile/build-gcc-makedefines.t">Build Makedefines</option>
+                <option value="../templates/t/makefile/gcc-makerules.t">Makerules</option>
+                <option value="../templates/t/makefile/gcc-makedirs.t">Makedirs</option>
+                <option value=""/>
+                <option value="../templates/t/makefile/lib-gcc-makefile.t">Library Makefile</option>
+                <option value="../templates/t/makefile/os-lib-gcc-makefile.t">Os Library Makefile</option>
+                <option value=""/>
+                <option value="../templates/t/makefile/exe-gcc-makefile.t">Executable Makefile</option>
+                <option value="../templates/t/makefile/os-exe-gcc-makefile.t">Os Executable Makefile</option>
+                <option value=""/>
+                <option value="../templates/t/makefile/slib-gcc-makefile.t">Shared Library Makefile</option>
+                <option value="../templates/t/makefile/os-slib-gcc-makefile.t">Os Shared Library Makefile</option>
+                <option value=""/>
+                <option value="../templates/t/makefile/kmodule-gcc-makefile.t">Kernel Module Makefile</option>
+                <option value="../templates/t/makefile/os-kmodule-gcc-makefile.t">Os Kernel Module Makefile</option>
+                <option value=""/>
+                <option value="../templates/t/makefile/meta-gcc-makefile.t">Meta Makefile</option>
+                <option value="../templates/t/makefile/meta-os-gcc-makefile.t">Meta Os Makefile</option>
+                <option value="../templates/t/makefile/meta-gcc-makedefines.t">Meta Makedefines</option>
+                <option value="../templates/t/makefile/meta-gcc-makerules.t">Meta Makerules</option>
+                <option value="../templates/t/makefile/meta-gcc-makedirs.t">Meta Makedirs</option>
+                <option value="../templates/t/makefile/meta-configure.t">Meta configure</option>
+                <option value=""/>
+                <option value="../templates/t/makefile/thirdparty-gcc-makefile.t">Thirdparty Makefile</option>
+                </select><br/>
+
+                <br/>
+                Content-Type: <select name="content_type">
+                <option value="text/plain">text</option>
+                <option value="text/html">html</option>
+                <option value="text/xml">xml</option>
+                <option value="application/json">json</option>
+                <option value="application/javascript">javascript</option>
+                <option value=""></option>
+                </select><br/>
+                Action: <select name="FormAction">
+                <option value="../templates/t/makefile/makefile.t">makefile.t</option>
+                <option value="/sthenode-cgi/cgi">cgi parameters</option>
+                <option value="/sthenode-cgi/cgicatch">catch cgi parameters</option>
+                <option value=""></option>
+                </select><br/>
+                Method: <select name="FormMethod">
+                <option value="POST">POST</option>
+                <option value="GET">GET</option>
+                <option value=""></option>
+                </select><br/><br/>
+      
+                <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Create-header-css.html
+===
+=== Author: $author$
+===   Date: 11/21/2019, 1/23/2021
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <!--
+        =====================================================================
+        === title
+        =====================================================================
+        -->
+        <title>Create - Header .css File</title>
+    
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Create.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-footer.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/html.js"></script>
+        <script type="text/javascript">
+        onLocationInit('Create.html', 'Create-header-css.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+    
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Create-logo.html">
+        <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Create-header.html">
+        <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Create-popdown-content.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Create-dropdown-content.html">
+        <script>includeHTML('includeDropdown');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Create-header-css.html">Create Header .css File</a></li>
+            <li><a href="Create-dropdown-css.html">Dropdown .css File</a></li>
+            <li><a href="Create-menubar-css.html">Menubar .css File</a></li>
+            <li><a href="Create-logo-css.html">Logo .css File</a></li>
+            <li><a href="Create-css.html">.css File</a></li>
+            <li class="home"><div><a href="Create.html">Home</a></div></li>
+        </ul>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/css/header-css.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+                File: <input name="Name" value="header"></input>
+                <input type="checkbox" name="is_Name" value="no" unchecked="checked">no</input><br>
+                <br/>
+                color: <input name="Color" value="gray"></input>
+                <input type="checkbox" name="is_Color" value="no" unchecked="checked">no</input><br>
+                color:hover: <input name="Hover" value="blue"></input>
+                <input type="checkbox" name="is_Hover" value="no" unchecked="checked">no</input><br>
+
+                <br/>
+                Content-Type: <select name="content_type">
+                <option value="text/plain">text</option>
+                <option value="text/html">html</option>
+                <option value="text/xml">xml</option>
+                <option value="application/json">json</option>
+                <option value="application/javascript">javascript</option>
+                <option value=""></option>
+                </select><br/>
+                Action: <select name="FormAction">
+                <option value="../templates/t/css/header-css.t">Header .css File</option>
+                <option value=""></option>
+                <option value="/sthenode-cgi/cgi">cgi parameters</option>
+                <option value="/sthenode-cgi/cgicatch">catch cgi parameters</option>
+                </select><br/>
+                Method: <select name="FormMethod">
+                <option value="POST">POST</option>
+                <option value="GET">GET</option>
+                <option value=""></option>
+                </select><br/>
+
+                <br/>
+                <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>

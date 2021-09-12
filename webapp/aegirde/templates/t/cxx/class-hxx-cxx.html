@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: class-hxx-cxx.html
+===
+=== Author: $author$
+===   Date: 10/10/2019
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Create - C++ class</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/html-css.t"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/html-js.t"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="class-hxx-cxx.html"><h3>C++ class</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="class-hxx-cxx.t" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+             <input type="radio" name="Extension" value="hpp" checked="checked">.hpp</input>
+             <input type="radio" name="Extension" value="cpp">.cpp</input>
+             <input type="radio" name="Extension" value="h">.h</input>
+             <input type="radio" name="Extension" value="c">.c</input>
+             <input type="checkbox" name="is_Extension" value="no" unchecked="">no</input>
+             <br/>
+
+             <br/>
+            <b>template &lt;</b> <input name="Template" value=""/><b>&gt;</b>
+            <input type="checkbox" name="is_Template" value="no" unchecked=""/>no<br/>
+            <b>class</b> <input name="Name" value="derive"/>
+            <input type="checkbox" name="is_Name" value="no" unchecked=""/>no<br/>
+            <b>: virtual public</b> <input name="Implements" value="implement"/>
+            <input type="checkbox" name="is_Implements" value="no" unchecked=""/>no<br/>
+            <b>, public</b> <input name="Extends" value="extend"/>
+            <input type="checkbox" name="is_Extends" value="no" unchecked=""/>no <b>{</b><br/>
+            <b>}; /// class</b><br/>
+
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="class-hxx-cxx.t">class-hxx-cxx.t</option>
+             <option value="/sthenode-cgi/cgi">cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr/></div>
+
+            <table><tr>
+                <td><a href="../qtcreator/qtcreator-pri-pro.html"><b>QtCreator project</b></a></td>
+                <td><a href="../makefile/makefile.html"><b>Makefile project</b></a></td>
+                <td><a href="../cxx/class-hxx-cxx.html"><b>C++ class</b></a></td>
+                <td><a href="../cxx/hxx-cxx.html"><b>C++ file</b></a></td>
+                <td><a href="../html/html.html"><b>.html file</b></a></td>
+                <td><a href="../css/css.html"><b>.css file</b></a></td>
+                <td><a href="../js/js.html"><b>.js file</b></a></td>
+                <td><a href="../t/t.html"><b>.t file</b></a></td>
+                <td><a href=".."><b>..</b></a></td>
+                <td><a href="../.."><b>../..</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

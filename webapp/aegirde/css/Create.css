@@ -1,0 +1,128 @@
+/*
+**********************************************************************
+** Copyright (c) 1988-2019 $organization$
+**
+** This software is provided by the author and contributors ``as is''
+** and any express or implied warranties, including, but not limited to,
+** the implied warranties of merchantability and fitness for a particular
+** purpose are disclaimed. In no event shall the author or contributors
+** be liable for any direct, indirect, incidental, special, exemplary,
+** or consequential damages (including, but not limited to, procurement
+** of substitute goods or services; loss of use, data, or profits; or
+** business interruption) however caused and on any theory of liability,
+** whether in contract, strict liability, or tort (including negligence
+** or otherwise) arising in any way out of the use of this software,
+** even if advised of the possibility of such damage.
+**
+**   File: Create.css
+**
+** Author: $author$
+**   Date: 11/22/2019, 1/24/2021
+**********************************************************************
+*/
+
+/*
+** body
+** ...
+*/
+body {
+    font-family: Arial;
+}
+.body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: Arial;
+    color: black;
+    background-color: white;
+    background-image: url('../images/jpeg/no-kraken-sea.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 100%;
+    background-position: center;
+    position: absolute;
+}
+.body-front {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: Arial;
+    color: black;
+    background-color: rgb(235, 235, 235);
+    background-image: url('../images/jpeg/kraken-tentacles-only.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 1795px 660px;
+    position: absolute;
+}
+.body-back {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-family: Arial;
+    color: black;
+    background-color: white;
+    background-image: url('../images/jpeg/kraken-sea.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    position: absolute;
+    opacity: 0.20;
+    z-index: -1;
+}
+/*
+** ...
+** body
+*/
+
+/*
+** form
+** ...
+*/
+form {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0px 1px 0px;
+    position: relative;
+    z-index: 1;
+}
+form pre {
+    margin: 0;
+}
+form table td {
+    white-space: nowrap;
+    padding: 0px 10px 0px 0px;
+}
+.form {
+    color: black;
+    background-color: lightgray;
+}
+/*
+** ...
+** form
+*/
+
+/*
+** global
+** ...
+*/
+a {
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+}
+a:hover {
+    color: blue;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.table {
+    white-space: nowrap;
+}
+/*
+** ...
+** global
+*/

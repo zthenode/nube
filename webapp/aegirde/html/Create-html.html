@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2019 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Create-html.html
+===
+=== Author: $author$
+===   Date: 10/16/2019, 1/24/2021
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Create - .html file</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Create.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-footer.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Create-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/html.js"></script>
+        <script type="text/javascript">
+        onLocationInit('Create.html','Create-html.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+    
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Create-logo.html">
+        <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Create-header.html">
+        <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Create-popdown-content.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Create-dropdown-content.html">
+        <script>includeHTML('includeDropdown');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Create-html.html">Create .html file</a></li>
+            <li><a href="Create-header-html.html">Header .html file</a></li>
+            <li><a href="Create-dropdown-html.html">Dropdown .html file</a></li>
+            <li><a href="Create-logo-html.html">Logo .html file</a></li>
+            <li><a href="Create-css.html">.css file</a></li>
+            <li><a href="Create-js.html">.js file</a></li>
+            <li><a href="Create-t.html">.t file</a></li>
+            <li class="home"><div><a href="Create.html">Home</a></div></li>
+        </ul>
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form class="dialog" name="Form" method="POST" action="../templates/t/html/html.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+                <b>&lt;!--</b> File: <input name="File" value=""/> <b>--&gt;</b><br/>
+                <b>&lt;html&gt;</b>
+                <b>&lt;head&gt;</b>
+                <b>&lt;title&gt;</b><input name="Framework" value="Aegirde"/> - <input name="Title" value="Create .html File"/><b>&lt;/title&gt;</b><br/>
+                <b>&lt;style</b> type=&quot;<input name="StyleType" value="text/css"/>&quot;<b>&gt;</b><input name="Style" value=""/><b>&lt;/style&gt;</b>
+                <b>&lt;link</b> href=&quot;<input name="StyleHref" value="../css/html.css"/>
+                <input type="checkbox" name="is_StyleHref" value="no" unchecked="checked">no</input>&quot;<b>&gt;</b><b>&lt;/link&gt;</b><br/>
+                <b>&lt;script</b> type=&quot;<input name="ScriptType" value="text/javascript"/>&quot; src=&quot;<input name="ScriptSrc" value="../js/html.js"/>
+                <input type="checkbox" name="is_ScriptSrc" value="no" unchecked="checked">no</input>&quot;<b>&gt;</b><input name="Script" value=""/><b>&lt;/script&gt;</b>
+                <b>&lt;/head&gt;</b><br/>
+                <b>&lt;body</b> class=&quot;<input name="BodyClass" value="body"/>&quot;<b>&gt;</b><br/>
+                <b>&lt;form</b> name=&quot;<input name="Form" value="Form"/>&quot; method=&quot;<input name="Method" value="POST"/>&quot; action=&quot;<input name="Action" value=".."/>&quot;<b>&gt;&lt;/form&gt;</b><br/>
+                <b>&lt;/body&gt;&lt;/html&gt;</b><br/>
+                Template: <select name="FormTemplate">
+                <option value="../templates/t/html/html.t">html.t</option>
+                <option value="../templates/t/html/create-html.t">create-html.t</option>
+                <option value=""/>
+                <option value="/sthenode-cgi/cgi?this=/sthenode-cgi/cgi">cgi parameters</option>
+                <option value="/sthenode-cgi/cgicatch?this=/sthenode-cgi/cgicatch">catch cgi parameters</option>
+                </select><br/>
+
+                <br/>
+                Content-Type: <select name="content_type">
+                <option value="text/plain">text</option>
+                <option value="text/html">html</option>
+                <option value="text/xml">xml</option>
+                <option value="application/json">json</option>
+                <option value="application/javascript">javascript</option>
+                <option value=""></option>
+                </select><br/>
+                Action: <select name="FormAction">
+                <option value="../templates/t/html/html.t">html.t</option>
+                <option value=""></option>
+                <option value="/sthenode-cgi/cgi">cgi parameters</option>
+                <option value="/sthenode-cgi/cgicatch">catch cgi parameters</option>
+                </select><br/>
+                Method: <select name="FormMethod">
+                <option value="POST">POST</option>
+                <option value="GET">GET</option>
+                <option value=""></option>
+                </select><br/><br/>
+      
+                <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>
