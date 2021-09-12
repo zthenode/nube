@@ -1,0 +1,318 @@
+<!--
+=====================================================================
+=== Copyright (c) 1988-2020 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Medusade-create-class-cxx.html
+===
+=== Author: $author$
+===   Date: 12/29/2020
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>Medusade - Create C++ class</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Medusade.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-dropdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-body-logo.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Medusade.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Medusade.html', 'Medusade-create-class-cxx.html');
+        </script>
+    </head>
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Medusade-body-logo.html">
+            <script>includeHTML('includeLogo');</script>
+        </div>
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Medusade-header.html">
+            <script>includeHTML('includeHeader');</script>
+        </div>
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Medusade-dropdown.html">
+            <script>includeHTML('includeDropdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Medusade-popdown.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Medusade-create-class-cxx.html">Create C++ class</a></li>
+            <li><a href="Medusade-create-cxx.html">C/C++ file</a></li>
+            <li><a href="Medusade-create-c.html">C file</a></li>
+            <li><a href="Medusade-create-t.html">.t file</a></li>
+            <li><a href="Medusade-create-html.html">.html File</a></li>
+            <li><a href="Medusade-create-css.html">.css file</a></li>
+            <li><a href="Medusade-create-js.html">.js file</a></li>
+            <li class="home"><div><a href="Medusade.html">Home</a></div></li>
+        </ul>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/cxx/class-hxx-cxx.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+                File: <input name="File" value=""/>[%Class%]
+                <input type="checkbox" name="is_File" value="no" unchecked="">no</input>
+                <input type="radio" name="extension" value="hpp" checked="checked">.hpp</input>
+                <input type="radio" name="extension" value="cpp">.cpp</input>
+                <input type="radio" name="extension" value="hxx">.hxx</input>
+                <input type="radio" name="extension" value="cxx">.cxx</input>
+                <input type="radio" name="extension" value="hh">.hh</input>
+                <input type="radio" name="extension" value="cc">.cc</input>
+                <input type="radio" name="extension" value="mm">.mm</input>
+                <input type="radio" name="extension" value="h">.h</input>
+                <input type="radio" name="extension" value="c">.c</input>
+                <input type="radio" name="extension" value="m">.m</input>
+                <input type="checkbox" name="is_lowercase_file" value="yes" unchecked="">lowercase</input>
+                <br/>
+                Template: <select name="FormTemplate">
+                <option value="../templates/t/cxx/class-hxx-cxx.t">C++ class &nbsp;&nbsp; (class-hxx-cxx.t)</option>
+                <option value="../templates/t/cxx/hxx-cxx.t">C/C++ file &nbsp;&nbsp; (hxx-cxx.t)</option>
+                <option value=""></option>
+                <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (parameters.t)</option>
+                <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (functions.t)</option>
+                <option value=""></option>
+                <option value="/medusade-cgi/cgi">cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgi)</option>
+                <option value="/medusade-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgicatch)</option>
+                <option value=""></option>
+                <option value="http://localhost:8080/medusade-http/http">http parameters &nbsp;&nbsp; (:8080/medusade-http/http)</option>
+                <option value="http://localhost:8080/medusade-http/httpcatch">catch http parameters &nbsp;&nbsp; (:8080/medusade-http/httpcatch)</option>
+                </select><br/>
+
+                <br/>
+                <b>#ifndef </b><select name="File_ifndef_define_prefix">
+                <option value=""></option>
+                <option value="_">_</option>
+                <option value="__">__</option>
+                </select><input name="Ifndef" value=""/><b></b><select name="File_ifndef_define_suffix">
+                <option value=""></option>
+                <option value="_">_</option>
+                <option value="__">__</option>
+                </select>[%Namespace%]
+                <input type="checkbox" name="is_Ifndef" value="no" unchecked=""/>no<br/>
+                <b>#include "</b><input name="Include" value=""/><b>"</b>[xos/base/base.hpp]
+                <input type="checkbox" name="is_Include" value="no" unchecked=""/>no<br/>
+                <b>#include &lt;</b><input name="Sys_include" value=""/><b>&gt;</b>[stdio.h]
+                <input type="checkbox" name="is_Sys_include" value="no" checked="checked"/>no<br/>
+
+                <br/>
+                <b>namespace</b> <input name="Namespace" value=""/>[xos] <b>{</b>
+                <input type="checkbox" name="is_Namespace" value="no" unchecked=""/>no<br/>
+
+                <b>template &lt;</b> <input name="Template" value=""/><b>&gt;</b>
+                <input type="checkbox" name="is_Template" value="no" unchecked=""/>no
+                <select name="TemplateT">
+                <option value="t" selected="selected">t</option>
+                <option value="T">T</option>
+                <option value=""></option>
+                </select>[t]
+                <input type="checkbox" name="is_TemplateT" value="no" unchecked=""/>no
+                <br/>
+
+                <b>class</b>
+                <b></b><select name="Exported">
+                <option value="EXPORT_CLASS">EXPORT_CLASS</option>
+                <option value="EXPORT">EXPORT</option>
+                <option value=""></option>
+                <option value="_EXPORT_CLASS">_EXPORT_CLASS</option>
+                <option value="_EXPORT">_EXPORT</option>
+                <option value=""></option>
+                <option value="c_EXPORT_CLASS">c_EXPORT_CLASS</option>
+                <option value="c_EXPORT">c_EXPORT</option>
+                <option value=""></option>
+                <option value="C_EXPORT_CLASS">c_EXPORT_CLASS</option>
+                <option value="C_EXPORT">c_EXPORT</option>
+                <option value=""></option>
+                <option value="EXPORTED">EXPORTED</option>
+                <option value="exported">exported</option>
+                <option value=""></option>
+                </select><b></b>
+                <input type="checkbox" name="is_Exported" value="no" unchecked="checked">no</input>
+                <input name="Class" value="derive"/>
+                <input type="checkbox" name="is_Class" value="no" unchecked=""/>no
+                &nbsp;&nbsp;<b>typedef </b><select name="Typedef_derives">
+                <option value="Derives">Derives</option>
+                <option value="cDerives">cDerives</option>
+                <option value="CDerives">CDerives</option>
+                <option value="derives">derives</option>
+                <option value=""></option>
+                </select><b></b>[derives]
+                <input type="checkbox" name="is_Typedef_derives" value="no" unchecked="checked">no</input>
+                <br/>
+
+                <b>: </b><b></b><select name="Implements_access">
+                <option value="public">public</option>
+                <option value="protected">protected</option>
+                <option value="private">private</option>
+                <option value=""></option>
+                </select><b></b>
+                <input name="Implements" value="implement"/>
+                <input type="checkbox" name="is_Implements" value="no" unchecked=""/>no
+                &nbsp;&nbsp;<b>typedef </b><select name="Typedef_implements">
+                <option value="Implements">Implements</option>
+                <option value="cImplements">cImplements</option>
+                <option value="CImplements">CImplements</option>
+                <option value="implements">implements</option>
+                <option value=""></option>
+                </select><b></b>[implements]
+                <input type="checkbox" name="is_Typedef_Implements" value="no" unchecked="checked">no</input>
+                <br/>
+                <b>, </b><b></b><select name="Extends_access">
+                <option value="public">public</option>
+                <option value="protected">protected</option>
+                <option value="private">private</option>
+                <option value=""></option>
+                </select><b></b>
+                <input name="Extends" value="extend"/><b> </b>
+                <input type="checkbox" name="is_Extends" value="no" unchecked=""/>no<b> {</b>
+                &nbsp;&nbsp;<b>typedef </b><select name="Typedef_extends">
+                <option value="Extends">Extends</option>
+                <option value="cExtends">cExtends</option>
+                <option value="CExtends">CExtends</option>
+                <option value="extends">extends</option>
+                <option value=""></option>
+                </select><b></b>[extends]
+                <input type="checkbox" name="is_Typedef_extends" value="no" unchecked="checked">no</input>
+                <br>
+
+                <b></b><select name="Copy_constructor_access">
+                <option value="public">public</option>
+                <option value="protected">protected</option>
+                <option value="private">private</option>
+                <option value=""></option>
+                </select><b>: </b>
+                <input type="checkbox" name="Explicit_copy_constructor" value="yes" unchecked=""/>
+                <b>explicit </b>&nbsp;&nbsp;
+                <b>(const </b><b>&amp;</b><input name="Copy_construct_parameters" value="" size="8"/>[copy]<b>):</b>
+                <input name="Copy_construct_extends" value="" size="8"/>[%extends%]<b>(</b><input name="Copy_construct_arguments" value="" size="8"/>[%copy%]<b>)</b>
+                <input type="checkbox" name="is_Copy_construct" value="no" unchecked="checked">no</input><b> {}</b>
+                <input type="checkbox" name="is_Copy_constructor" value="no" unchecked=""/>no
+                <input type="hidden" name="Copy_constructor" value=""/>
+                <br>
+
+                <b></b><select name="Constructor_access">
+                <option value="public">public</option>
+                <option value="protected">protected</option>
+                <option value="private">private</option>
+                <option value=""></option>
+                </select><b>: </b>
+                <input type="checkbox" name="Explicit_constructor" value="yes" unchecked=""/>
+                <b>explicit </b>&nbsp;&nbsp;
+                <b>(</b><input name="Construct_parameters" value=""/><b>): </b><input name="Construct" value=""/><b> {}</b>
+                <input type="checkbox" name="is_Constructor" value="no" unchecked=""/>no
+                <input type="hidden" name="Constructor" value=""/>
+                <br>
+
+                <b></b><select name="Destructor_access">
+                <option value="public">public</option>
+                <option value="protected">protected</option>
+                <option value="private">private</option>
+                <option value=""></option>
+                </select><b>: </b>
+                <input type="checkbox" name="Virtual_destructor" value="yes" checked="checked"/>
+                <b>virtual </b>&nbsp;&nbsp;
+                <b>~</b><b>(</b><b>) {}</b>
+                <input type="checkbox" name="is_Destructor" value="no" unchecked=""/>no
+                <input type="hidden" name="Destructor" value=""/><br>
+
+                <b>}; /// class</b> %Class% <input type="checkbox" name="is_Class_end_comment" value="no" unchecked=""/>no<br/>
+                <b>} /// namespace</b> %Namespace% <input type="checkbox" name="is_Namespace_end_comment" value="no" unchecked=""/>no<br/>
+
+                <br/>
+                Content-Type: <select name="content_type">
+                <option value="text/plain">text</option>
+                <option value="text/html">html</option>
+                <option value="text/xml">xml</option>
+                <option value="application/json">json</option>
+                <option value="application/javascript">javascript</option>
+                <option value=""></option>
+                </select><br/>
+                Action: <select name="FormAction">
+                <option value="../templates/t/cxx/class-hxx-cxx.t">C++ class &nbsp;&nbsp; (class-hxx-cxx.t)</option>
+                <option value=""></option>
+                <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (parameters.t)</option>
+                <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (functions.t)</option>
+                <option value=""></option>
+                <option value="/medusade-cgi/cgi">cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgi)</option>
+                <option value="/medusade-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgicatch)</option>
+                <option value=""></option>
+                <option value="http://localhost:8080/medusade-http/http">http parameters &nbsp;&nbsp; (:8080/medusade-http/http)</option>
+                <option value="http://localhost:8080/medusade-http/httpcatch">catch http parameters &nbsp;&nbsp; (:8080/medusade-http/httpcatch)</option>
+                </select><br/>
+                Method: <select name="FormMethod">
+                <option value="POST">POST</option>
+                <option value="GET">GET</option>
+                <option value=""></option>
+                </select><br/>
+
+                <br/>
+                <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2021 $organization$
+===
+=== This software is provided by the author and contributors ``as is''
+=== and any express or implied warranties, including, but not limited to,
+=== the implied warranties of merchantability and fitness for a particular
+=== purpose are disclaimed. In no event shall the author or contributors
+=== be liable for any direct, indirect, incidental, special, exemplary,
+=== or consequential damages (including, but not limited to, procurement
+=== of substitute goods or services; loss of use, data, or profits; or
+=== business interruption) however caused and on any theory of liability,
+=== whether in contract, strict liability, or tort (including negligence
+=== or otherwise) arising in any way out of the use of this software,
+=== even if advised of the possibility of such damage.
+===
+===   File: Medusade-create-html-form-parameters.html
+===
+=== Author: $author$
+===   Date: 1/17/2021
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    == head
+    =====================================================================
+    -->
+    <head>
+        <title>Medusade - Create .html form parameters</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../css/Medusade.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-header.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-footer.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-dropover.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-popover.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-dropdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-popdown.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-menubar.css"></link>
+        <link rel="stylesheet" type="text/css" href="../css/Medusade-logo.css"></link>
+        <style type="text/css">
+        </style>
+
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../js/Medusade.js"></script>
+        <script type="text/javascript">
+            onLocationInit('Medusade-home.html', 'Medusade-create-html-form-parameters.html');
+        </script>
+    </head>
+
+    <!--
+    =====================================================================
+    == body
+    =====================================================================
+    -->
+    <body class="body">
+
+        <!--
+        =====================================================================
+        === logo
+        =====================================================================
+        -->
+        <div id="includeLogo" include="Medusade-logo.html">
+            <script>includeHTML('includeLogo');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === header
+        =====================================================================
+        -->
+        <div id="includeHeader" include="Medusade-header.html">
+            <script>includeHTML('includeHeader');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === dropdown
+        =====================================================================
+        -->
+        <div id="includeDropdown" include="Medusade-dropdown.html">
+            <script>includeHTML('includeDropdown');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === popdown
+        =====================================================================
+        -->
+        <div id="includePopdown" include="Medusade-popdown.html">
+            <script>includeHTML('includePopdown');</script>
+        </div>
+
+        <!--
+        =====================================================================
+        === menubar
+        =====================================================================
+        -->
+        <ul class="menubar">
+            <li><a href="Medusade-create-html-form-parameters.html">Create .html form parameters</a></li>
+            <li><a href="Medusade-create-application-html.html">applicatin .html file</a></li>
+            <li><a href="Medusade-create-html.html">.html file</a></li>
+            <li><a href="Medusade-create-css.html">.css file</a></li>
+            <li><a href="Medusade-create-js.html">.js file</a></li>
+            <li><a href="Medusade-create-t.html">.t file</a></li>
+            <li class="home"><div><a href="Medusade-home.html">Home</a></div></li>
+        </ul>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form name="Form" method="POST" action="../templates/t/html/application-form-parameters-html.t"
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form">
+
+                <b>&lt;?xml version="</b><input name="XmlVersion" value="1.0"></input><b>"</b>[1.0]
+                <b></b><input name="is_XmlVersion" value="no" type="checkbox" unchecked="checked">no</input><b></b>
+                <b>&nbsp;encoding="</b><input name="XmlEncoding" value="utf-8"></input><b>"</b>[utf-8]
+                <b></b><input name="is_XmlEncoding" value="no" type="checkbox" unchecked="checked">no</input><b>&nbsp;&gt;</b>
+                <input name="is_XmlProcessor" value="no" type="checkbox" unchecked="checked">no</input><br/>
+
+                <b>&lt;!--&nbsp;</b>File:<input name="File" value=""></input><b></b>
+                <b></b><input name="is_File" value="no" type="checkbox" unchecked="checked">no</input><b></b>
+                <b></b><select name="Extension"><br/>
+                <option value="xhtml">.xhtml</option>
+                <option value="html" selected="selected">.html</option>
+                <option value="htm">.htm</option>
+                <option value=""></option></select>[.html]<b></b>
+                <b></b><input name="is_Extension" value="no" type="checkbox" unchecked="checked">no</input><b>&nbsp;--&gt;</b><br/>
+
+                Template: <select name="FormTemplate">
+                    <option value="../templates/t/html/application-form-parameters-html.t">Create .html form parameters (../templates/t/html/application-form-parameters-html.t)</option>
+                    <option value=""></option>
+                    <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+                    <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+                    <option value=""></option>
+                    <option value="/medusade-cgi/cgi">cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgi)</option>
+                    <option value="/medusade-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgicatch)</option>
+                    <option value=""/>
+                    <option value="http://localhost:8080/medusade-http/http">http parameters &nbsp;&nbsp; (...:8080/medusade-http/http)</option>
+                    <option value="http://localhost:8080/medusade-http/httpcatch">catch http parameters &nbsp;&nbsp; (...:8080/medusade-http/httpcatch)</option>
+                    </select>
+                <br/>
+
+                <br/>
+                <b>&lt;form name="</b><input name="Form_name" value="Form" size="5"></input><b>"</b>
+                <input name="is_Form_name" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&nbsp;&nbsp;method="</b><input name="Form_method" value="POST" size="5"></input><b>"</b>
+                <input name="is_Form_method" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&nbsp;&nbsp;action="</b><input name="Form_action" value=""></input><b>"</b>
+                <input name="is_Form_action" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&nbsp;&nbsp;onSubmit="</b><input name="Form_onSubmit" value=""></input><b>"</b>
+                <input name="is_Form_onSubmit" value="no" type="checkbox" unchecked="checked">no</input><b>&nbsp;&gt;</b>
+                <input name="is_Form" value="no" type="checkbox" unchecked="checked">no</input><br/>
+
+                <b>&nbsp;&nbsp;</b><input name="InputLabel" value="" size="10"></input><b>:</b>
+                <input name="is_InputLabel" value="no" type="checkbox" unchecked="checked">no</input><b></b>
+                <b>&nbsp;&lt;input&nbsp;name="</b><input name="FormInput" value=""></input><b>,label:name=value, ..."</b>
+                <b></b><input name="is_FormInput" value="no" type="checkbox" unchecked="checked">no</input><b></b>
+                <b>&nbsp;value="</b><input name="InputValue" value=""></input><b>"</b>
+                <b></b><input name="is_InputValue" value="no" type="checkbox" unchecked="checked">no</input><b></b><br/>
+                <b>&nbsp;&nbsp;type="</b><select name="InputType">
+                <option value=""></option>
+                <option value="checkbox">checkbox</option>
+                <option value="radio">radio</option>
+                <option value="hidden">hidden</option>
+                <option value=""></option></select>
+                <input name="is_InputType" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&nbsp;&gt;</b><input name="InputText" value=""></input>
+                <input name="is_InputText" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&lt;/input&gt</b><br/>
+
+                <b>&nbsp;&nbsp;</b><input name="SelectLabel" value="" size="10"></input><b>:</b>
+                <b></b><input name="is_SelectLabel" value="no" type="checkbox" unchecked="checked">no</input><b></b>
+                <b>&nbsp;&lt;select name="</b><input name="FormSelect" value=""></input><b>label:name=value?option|..., ..."</b>
+                <b></b><input name="is_FormSelect" value="no" type="checkbox" unchecked="checked">no</input><b>&nbsp;&gt;</b><br/>
+                <b>&nbsp;&nbsp;&lt;option value="</b><input name="OptionValue" value=""></input><b>"</b>
+                <input name="is_OptionValue" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&nbsp;&gt;</b><input name="OptionText" value=""></input>
+                <input name="is_OptionText" value="no" type="checkbox" unchecked="checked">no</input>
+                <b>&nbsp;&lt;/option&gt;&lt;/select&gt;</b>
+                <br/><b>&lt;/form&gt;</b><br/>
+
+                <br/>
+                Organization: <input name="Organization" value=""></input>[$organization$]
+                    <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input><br/>
+                Author: <input name="Author" value=""></input>[$author$]
+                    <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input><br/>
+                Date:<input name="Date" value=""/>[%date()%]<b></b>
+                    <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
+                <br/>
+
+                <br/>
+                Content-Type: <select name="content_type">
+                    <option value="text/plain">text</option>
+                    <option value="text/html">html</option>
+                    <option value="text/xml">xml</option>
+                    <option value="application/json">json</option>
+                    <option value="application/javascript">javascript</option>
+                    <option value=""></option>
+                    </select>
+                <br/>
+                Action: <select name="FormAction">
+                    <option value="../templates/t/html/application-form-parameters-html.t">Create .html form parameters (../templates/t/html/application-form-parameters-html.t)</option>
+                    <option value=""></option>
+                    <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
+                    <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
+                    <option value=""></option>
+                    <option value="/medusade-cgi/cgi">cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgi)</option>
+                    <option value="/medusade-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/medusade-cgi/cgicatch)</option>
+                    <option value=""/>
+                    <option value="http://localhost:8080/medusade-http/http">http parameters &nbsp;&nbsp; (...:8080/medusade-http/http)</option>
+                    <option value="http://localhost:8080/medusade-http/httpcatch">catch http parameters &nbsp;&nbsp; (...:8080/medusade-http/httpcatch)</option>
+                    </select>
+                <br/>
+                Method: <select name="FormMethod">
+                    <option value="POST">POST</option>
+                    <option value="GET">GET</option>
+                    <option value=""></option>
+                    </select>
+                <br/>
+                <br/>
+
+                <input type="submit" name="submit" value="submit"/><br/>
+            </div>
+        </form>
+    </body>
+</html>
