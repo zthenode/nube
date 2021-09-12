@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2021 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: html.html
+===
+=== Author: $author$
+===   Date: 7/20/2021
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>texta - html.html</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../../../css/css.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../../../js/js.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="html.html"><h3>html.html</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="html.texta" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+            <div class="form"><hr/>
+    
+            <b>&lt;?xml version="</b><input name="XmlVersion" value="1.0"></input><b>"</b>
+            <input type="checkbox" name="is_XmlVersion" value="no" unchecked="checked">no</input>
+            <b>encoding="</b><input name="XmlEncoding" value="utf-8"></input><b>"</b>
+            <input type="checkbox" name="is_XmlEncoding" value="no" unchecked="checked">no</input>
+            <b>?&gt;</b>
+            <input type="checkbox" name="is_Xml" value="no" unchecked="checked">no</input>
+            <br/>
+            <b>&lt;!--</b> File: <input name="Base" value=""></input>
+            <input type="checkbox" name="is_Base" value="no" unchecked="checked">no</input>
+            <input type="radio" name="Extension" value="html" checked="checked">.html</input>
+            <input type="radio" name="Extension" value="xhtml" unchecked="checked">.xhtml</input>
+            <input type="radio" name="Extension" value="htm" unchecked="checked">.htm</input>
+            <input type="checkbox" name="is_Extension" value="no" unchecked="">no</input>
+            <b>--&gt;</b>
+            <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
+            <br/>
+
+            <br/>
+            <b>&lt;html&gt;</b>
+            <input type="checkbox" name="is_Html" value="no" unchecked="checked">no</input>
+            <b>&lt;head&gt;</b>
+            <input type="checkbox" name="is_Head" value="no" unchecked="checked">no</input>
+            <br/>
+
+            <b>&lt;link rel="</b>stylesheet<b>" type="</b><input name="StyleType" value="text/css"/><b>"</b>
+            <b>href="</b><input name="StyleHref" value="../css/css.css"/><b>"&gt;</b><b>&lt;/link&gt;</b>
+            <br/>
+            <b>&lt;style&gt;</b><input name="Style" value=""/><b>&lt;/style&gt;</b>
+            <b></b><input type="checkbox" name="is_Style" value="no" unchecked="checked">no</input><b></b>
+            <br/>
+
+            <b>&lt;script type="</b><input name="ScriptType" value="text/javascript"/><b>"</b>
+            <b>src="</b><input name="ScriptSrc" value="../js/js.js"/><b>"&gt;</b><b>&lt;/link&gt;</b>
+            <br/>
+            <b>&lt;script&gt;</b><input name="Script" value=""/><b>&lt;/script&gt;</b>
+            <b></b><input type="checkbox" name="is_Script" value="no" unchecked="checked">no</input><b></b>
+            <br/>
+
+            <b>&lt;/head&gt;</b><b>&lt;body class="</b><input name="BodyClass" value="body"></input><b>"</b>
+            <input type="checkbox" name="is_BodyClass" value="no" checked="checked">no</input>
+            <b>&gt;</b>
+            <input type="checkbox" name="is_Body" value="no" unchecked="checked">no</input>
+            <br/>
+            <b>&lt;form class="</b><input name="FormClass" value="form"></input><b>"</b>
+            <input type="checkbox" name="is_FormClass" value="no" unchecked="checked">no</input>
+            <b>name="</b><input name="FormName" value=""></input><b>"</b>
+            <input type="checkbox" name="is_FormName" value="no" unchecked="checked">no</input>
+            <br/><b>&nbsp;&nbsp;</b>
+            <b>method="</b><select name="Method">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select><b>"</b>
+            <input type="checkbox" name="is_Method" value="no" unchecked="checked">no</input>
+            <b>action="</b><input name="Action" value=""></input><b>"</b>
+            <input type="checkbox" name="is_Action" value="no" unchecked="checked">no</input>
+            <b>&gt;</b>
+            <input type="checkbox" name="is_Form" value="no" unchecked="checked">no</input>
+            <br/>
+
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;input</b>
+            <b>type="</b><input name="InputType" value=""></input><b>"</b>
+            <b>name="</b><input name="InputName" value=""></input><b>"</b>
+            <br/>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&nbsp;&nbsp;</b><b>value="</b><input name="InputValue" value=""></input><b>"&gt;</b><input name="InputText" value=""></input><b>&lt;/input&gt;</b>
+            <input type="checkbox" name="is_Input" value="no" checked="checked">no</input>
+            <br/>
+
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;input</b>
+            <b>type="checkbox"</b>
+            <b>name="</b><input name="CheckName" value=""></input><b>"</b>
+            <b>value="</b><input name="CheckValue" value=""></input>
+            <br/>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&nbsp;&nbsp;</b><b>checked="</b><select name="CheckChecked">
+            <option value=""></option>
+            <option value="yes">yes</option>
+            <option value="checked">checked</option>
+            </select><b>"&gt;</b><input name="CheckText" value=""></input><b>&lt;/input&gt;</b>
+            <input type="checkbox" name="is_Check" value="no" checked="checked">no</input>
+            <br/>
+
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;input</b>
+            <b>type="radio"</b>
+            <b>name="</b><input name="RadioName" value=""></input><b>"</b>
+            <b>value="</b><input name="RadioValue" value=""></input>
+            <br/>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&nbsp;&nbsp;</b><b>checked="</b><select name="RadioChecked">
+            <option value=""></option>
+            <option value="yes">yes</option>
+            <option value="checked">checked</option>
+            </select><b>"&gt;</b><input name="RadioText" value=""></input><b>&lt;/input&gt;</b>
+            <input type="checkbox" name="is_Radio" value="no" checked="checked">no</input>
+            <br/>
+
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;select</b>
+            <b>name="</b><input name="SelectName" value=""></input><b>"&gt;</b>
+            <br/>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&nbsp;&nbsp;</b><b>&lt;option</b>
+            <b>value="</b><input name="SelectValue" value=""></input><b>"&gt;</b><input name="SelectText" value=""></input><b>&lt;/option&gt;</b><b>&lt;/select&gt;</b>
+            <input type="checkbox" name="is_Select" value="no" checked="checked">no</input>
+            <br/>
+            <b>&lt;/form&gt;</b><b>&lt;/body&gt;&lt;/html&gt;</b><br/>
+
+            <br/>
+            Content-Type: <select name="content_type">
+            <option value="text/plain">text</option>
+            <option value="text/html">html</option>
+            <option value="text/xml">xml</option>
+            <option value="application/json">json</option>
+            <option value="application/javascript">javascript</option>
+            <option value=""></option>
+            </select>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;select name="</b><b>"&gt;</b><b>&lt;option value="</b><b>"&gt;</b><b>&lt;/option&gt;</b><b>&lt;/select&gt;</b>
+            <input type="checkbox" name="is_SelectContent" value="no" unchecked="checked">no</input>
+            <br/>
+            Action: <select name="FormAction">
+            <option value="html.texta">html.texta</option>
+            <option value=""></option>
+            <option value="/texta-cgi/cgi">cgi parameters</option>
+            <option value="/texta-cgi/cgicatch">catch cgi parameters</option>
+            <option value=""></option>
+            </select>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;select name="</b><b>"&gt;</b><b>&lt;option value="</b><b>"&gt;</b><b>&lt;/option&gt;</b><b>&lt;/select&gt;</b>
+            <input type="checkbox" name="is_SelectAction" value="no" unchecked="checked">no</input>
+            <br/>
+            Method: <select name="FormMethod">
+            <option value="POST">POST</option>
+            <option value="GET">GET</option>
+            <option value=""></option>
+            </select>
+            <b>&nbsp;&nbsp;&nbsp;&nbsp;</b><b>&lt;select name="</b><b>"&gt;</b><b>&lt;option value="</b><b>"&gt;</b><b>&lt;/option&gt;</b><b>&lt;/select&gt;</b>
+            <input type="checkbox" name="is_SelectMethod" value="no" unchecked="checked">no</input>
+            <br/>
+            <b>&lt;table</b><b>&gt;</b><b>&lt;tr</b><b>&gt;</b><b>&lt;td</b><b>&gt;</b>
+            <b>&lt;a href=""</b><b>&gt;</b><b>&lt;/a</b><b>&gt;</b>
+            <b>&lt;/td</b><b>&gt;</b><b>&lt;/tr</b><b>&gt;</b><b>&lt;/table</b><b>&gt;</b>
+            <input type="checkbox" name="is_FormTable" value="no" unchecked="checked">no</input>
+            <br/>
+            <br/>
+    
+            <input type="submit" name="submit" value="submit"/><br/>
+            <hr/></div>
+
+            <table><tr>
+                <td><a href="../../../../.."><b>../../../../..</b></a></td>
+                <td><a href="../html/form-html.html"><b>form-html.html</b></a></td>
+                <td><a href="../html/form-input-html.html"><b>form-input-html.html</b></a></td>
+                <td><a href="../css/css.html"><b>css.html</b></a></td>
+                <td><a href="../js/js.html"><b>js.html</b></a></td>
+                <td><a href="../cxx/cxx.html"><b>cxx.html</b></a></td>
+                <td><a href="../texta/texta.html"><b>texta.html</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>

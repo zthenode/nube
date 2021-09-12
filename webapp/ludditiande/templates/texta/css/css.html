@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2021 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: css.html
+===
+=== Author: $author$
+===   Date: 7/24/2021
+=====================================================================
+-->
+<html>
+    <!--
+    =====================================================================
+    === head
+    =====================================================================
+    -->
+    <head>
+        <title>css.html</title>
+
+        <!--
+        =====================================================================
+        === style
+        =====================================================================
+        -->
+        <link rel="stylesheet" type="text/css" href="../../../css/css.css"></link>
+        <style type="text/css">
+        </style>
+    
+        <!--
+        =====================================================================
+        === script
+        =====================================================================
+        -->
+        <script type="text/javascript" src="../../../js/js.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+
+    <!--
+    =====================================================================
+    === body
+    =====================================================================
+    -->
+    <body>
+        <a href="css.html"><h3>css.html</h3></a>
+
+        <!--
+        =====================================================================
+        === form
+        =====================================================================
+        -->
+        <form
+         Name="Form" Action="css.texta" Method="POST" 
+         onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+             <div class="form"><hr/>
+    
+            <b></b>File: <input name="File" value=""></input><b></b>
+            <b></b><input type="radio" name="Extension" value="css" checked="checked">.css</input><b></b>
+            <b></b><input type="radio" name="Extension" value="no" unchecked="checked">no</input><b></b>
+            <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
+            <br/>
+
+            <b></b>Template: <select name="FormTemplate">
+            <option value="css.texta">css.texta</option>
+             <option value=""></option>
+             <option value="/cgi/cgi">cgi parameters</option>
+             <option value="/cgi/cgicatch">catch cgi parameters</option>
+             <option value=""></option>
+            </select><b></b>
+            <br/>
+
+             <br/>
+             Content-Type: <select name="content_type">
+             <option value="text/plain">text</option>
+             <option value="text/html">html</option>
+             <option value="text/xml">xml</option>
+             <option value="application/json">json</option>
+             <option value="application/javascript">javascript</option>
+             <option value=""></option>
+             </select><br/>
+             Action: <select name="FormAction">
+             <option value="css.texta">css.texta</option>
+             <option value=""></option>
+             <option value="/cgi/cgi">cgi parameters</option>
+             <option value="/cgi/cgicatch">catch cgi parameters</option>
+             <option value=""></option>
+             </select><br/>
+             Method: <select name="FormMethod">
+             <option value="POST">POST</option>
+             <option value="GET">GET</option>
+             <option value=""></option>
+             </select><br/>
+             <br/>
+    
+             <input type="submit" name="submit" value="submit"/><br/>
+             <hr/></div>
+
+            <table><tr>
+                <td><a href="../../../../.."><b>../../../../..</b></a></td>
+                <td><a href="../html/form-input-html.html"><b>form-input-html.html</b></a></td>
+                <td><a href="../html/form-html.html"><b>form-html.html</b></a></td>
+                <td><a href="../html/html.html"><b>html.html</b></a></td>
+                <td><a href="../js/js.html"><b>js.html</b></a></td>
+                <td><a href="../cxx/cxx.html"><b>cxx.html</b></a></td>
+                <td><a href="../texta/texta.html"><b>texta.html</b></a></td>
+            </tr></table>
+         </form>
+    </body>
+</html>
