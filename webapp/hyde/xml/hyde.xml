@@ -1,0 +1,741 @@
+<?xml version="1.0"?>
+<!--==========================================================-->
+<!--                                                          -->
+<!--   File: hyde.xml                                         -->
+<!--                                                          -->
+<!-- Author: $author$                                         -->
+<!--   Date: 8/22/2004, 10/15/2021                            -->
+<!--                                                          -->
+<!--    $Id$                                                  -->
+<!--                                                          -->
+<!--==========================================================-->
+<hyde:config
+ xmlns:hyde="http://Hydra-Development-Environment">
+
+    <!--==========================================================-->
+    <!-- Header                                                   -->
+    <!--==========================================================-->
+    <hyde:header height="50" location="?frame=header">
+        <hyde:fonts>
+            <hyde:font face="arial" size="4" color="#669966"/>
+        </hyde:fonts>
+
+        <hyde:text>Hydra Development Environment</hyde:text>
+    </hyde:header>
+
+    <!--==========================================================-->
+    <!--  Footer                                                  -->
+    <!--==========================================================-->
+    <hyde:footer 
+	 width="70" height="24" bgcolor="#cccccc" 
+	 location="?frame=footer">
+        <hyde:fonts>
+            <hyde:font hover="off" face="arial" size="2" color="#000000"/>
+            <hyde:font hover="on" face="arial" size="2" color="#ff0000"/>
+        </hyde:fonts>
+
+        <hyde:footer-item id="xenede"
+         xlocation_target="xenede" 
+		 location="/xenede/xsl/xenede.xsl">
+            <hyde:text>Xenede</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="medusaxde"
+         xlocation_target="medusaxde" 
+		 location="/medusaxde/xsl/medusaxde.xsl">
+            <hyde:text>Medusaxde</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="hyde"
+         xlocation_target="hyde" 
+		 location="/hyde/xml/hyde.xsl">
+            <hyde:text>Hyde</hyde:text>
+        </hyde:footer-item>
+
+        <!--hyde:footer-item id="old_hyde" 
+         xlocation_target="hyde" 
+		 location="/ccl/xml/hyde-frame.xsl">
+            <hyde:text>Hyde(old)</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="xode" 
+		 xlocation_target="xode" 
+		 location="/hyde/xsl/xode.xsl">
+            <hyde:text>Xode</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="xde" 
+		 xlocation_target="xde" 
+		 location="/xde/xsl/xde.xsl">
+            <hyde:text>Xde</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="evx" 
+		 xlocation_target="evx" 
+		 location="/xde/xsl/xde.xsl?fr=Evolution&amp;tr=/evx&amp;tx=evx-">
+            <hyde:text>Evx</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="ebx" 
+		 xlocation_target="ebx" 
+		 location="/html/ebx.html">
+            <hyde:text>Ebx</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="html" 
+		 location="/html/">
+            <hyde:text>/HTML</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="xml" 
+		 location="/xml/">
+            <hyde:text>/XML</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="xsl" 
+		 location="/xsl/">
+            <hyde:text>/XSL</hyde:text>
+        </hyde:footer-item>
+
+        <hyde:footer-item id="" 
+		 location="/">
+            <hyde:text>?/</hyde:text>
+        </hyde:footer-item-->
+
+    </hyde:footer>
+
+    <!--==========================================================-->
+    <!-- Tabs                                                     -->
+    <!--==========================================================-->
+    <hyde:tabs width="100" height="26" bgcolor="#dddddd">
+        <hyde:images>
+            <hyde:image state="top" location="../images/hyde-tab-top.gif"/>
+            <hyde:image state="bottom" location="../images/hyde-tab.gif"/>
+        </hyde:images>
+
+        <hyde:fonts>
+            <hyde:font hover="off" face="arial" size="2" color="#000000"/>
+            <hyde:font hover="on" face="arial" size="2" color="#ff0000"/>
+        </hyde:fonts>
+
+        <!--==========================================================-->
+        <!-- Tab                                                      -->
+        <!--==========================================================-->
+        <hyde:tab id="create" menu="create" default="yes">
+            <hyde:text>Create</hyde:text>
+        </hyde:tab>
+        <!--==========================================================-->
+        <!-- Tab                                                      -->
+        <!--==========================================================-->
+        <hyde:tab id="project" menu="project">
+            <hyde:text>Project</hyde:text>
+        </hyde:tab>
+        <!--==========================================================-->
+        <!-- Tab                                                      -->
+        <!--==========================================================-->
+        <hyde:tab id="tools" menu="tools">
+            <hyde:text>Tools</hyde:text>
+        </hyde:tab>
+        <!--==========================================================-->
+        <!-- Tab                                                      -->
+        <!--==========================================================-->
+        <hyde:tab id="source" menu="source">
+            <hyde:text>Source</hyde:text>
+        </hyde:tab>
+        <!--==========================================================-->
+        <!-- Tab                                                      -->
+        <!--==========================================================-->
+        <hyde:tab id="docs" menu="docs">
+            <hyde:text>Docs</hyde:text>
+        </hyde:tab>
+        <!--==========================================================-->
+        <!-- Tab                                                      -->
+        <!--==========================================================-->
+        <hyde:tab id="help" menu="help">
+            <hyde:text>Help</hyde:text>
+        </hyde:tab>
+    </hyde:tabs>
+
+    <!--==========================================================-->
+    <!-- Menus                                                    -->
+    <!--==========================================================-->
+    <hyde:menus
+     width="150"
+     bgcolor="#dddddd"
+     location="?frame=menu">
+
+        <hyde:images>
+            <hyde:image id="left" width="2" height="25" location="../images/hyde-menu-item.gif"/>
+            <hyde:image id="right" width="2" height="25" location="../images/hyde-menu-item.gif"/>
+            <hyde:image id="top_left" width="2" height="25" location="../images/hyde-item-top-left.gif"/>
+            <hyde:image id="top_right" width="2" height="25" location="../images/hyde-item-top-right.gif"/>
+            <hyde:image id="bottom_left" width="2" height="25" location="../images/hyde-item-bottom-left.gif"/>
+            <hyde:image id="bottom_right" width="2" height="25" location="../images/hyde-item-bottom-right.gif"/>
+        </hyde:images>
+
+        <hyde:fonts>
+            <hyde:font hover="off" face="arial" size="2" color="black"/>
+            <hyde:font hover="on" face="arial" size="2" color="red"/>
+        </hyde:fonts>
+
+        <hyde:menu-sections bgcolor="#669966" spacing="2">
+            <hyde:images>
+                <hyde:image id="left" state="top" width="13" height="25" location="../images/hyde-menu-top-left.gif"/>
+                <hyde:image id="left" state="bottom" width="13" height="25" location="../images/hyde-menu-left.gif"/>
+                <hyde:image id="right" state="top" width="13" height="25" location="../images/hyde-menu-right.gif"/>
+                <hyde:image id="right" state="bottom" width="13" height="25" location="../images/hyde-menu-right.gif"/>
+                <hyde:image id="bottom_left" width="13" height="13" location="../images/hyde-menu-bottom-left.gif"/>
+                <hyde:image id="bottom_right" width="13" height="13" location="../images/hyde-menu-right.gif"/>
+            </hyde:images>
+
+            <hyde:fonts>
+                <hyde:font hover="off" face="arial" size="2" color="#ffffdd"/>
+                <hyde:font hover="on" face="arial" size="2" color="#ffffff"/>
+            </hyde:fonts>
+        </hyde:menu-sections>
+
+        <!--==========================================================-->
+        <!-- Menu                                                     -->
+        <!--==========================================================-->
+        <hyde:menu id="create">
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="files">
+                <hyde:text>Create Files</hyde:text>
+
+                <hyde:menu-item id="html"
+                 location="hyde-create-html.xsl?document_file=hyde.xml">
+                    <hyde:text>HTML File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="xml"
+                 location="hyde-create-xml.xsl?document_file=hyde.xml">
+                    <hyde:text>XML File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="xslt"
+                 location="hyde-create-xsl.xsl?document_file=hyde.xml">
+                    <hyde:text>XSLT File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="xtl"
+                 location="hyde-create-xtl.xsl?document_file=hyde.xml">
+                    <hyde:text>XTL File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="dt"
+                 location="hyde-create-dt.xsl?document_file=hyde.xml">
+                    <hyde:text>DT File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="t"
+                 location="hyde-create-t.xsl?document_file=hyde.xml">
+                    <hyde:text>T File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="asp"
+                 location="hyde-create-asp.xsl?document_file=hyde.xml">
+                    <hyde:text>ASP File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="jsp"
+                 location="hyde-create-jsp.xsl?document_file=hyde.xml">
+                    <hyde:text>JSP File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="php"
+                 location="hyde-create-php.xsl?document_file=hyde.xml">
+                    <hyde:text>PHP File</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="sql"
+                 location="hyde-create-sql.xsl?document_file=hyde.xml">
+                    <hyde:text>SQL File</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="c">
+                <hyde:text>Create C/C++ Files</hyde:text>
+                <hyde:menu-item id="h"
+                 location="hyde-create-h.xsl?document_file=hyde.xml">
+                    <hyde:text>.H File</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="c"
+                 location="hyde-create-c.xsl?document_file=hyde.xml">
+                    <hyde:text>.C File</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="module_c"
+                 location="hyde-create-module-c.xsl?document_file=hyde.xml">
+                    <hyde:text>C Module</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="enum"
+                 location="hyde-create-enum-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>C/C++ Enum</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="cxx">
+                <hyde:text>Create C++ Classes</hyde:text>
+
+                <hyde:menu-item id="class"
+                 location="hyde-create-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>C++ Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="export_class"
+                 location="hyde-create-cxx.xsl?document_file=hyde.xml&amp;form_cxx_param_interface=export&amp;form_cxx_param_class=cInterface&amp;form_cxx_param_implements=cInterface">
+                    <hyde:text>C++ Export Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="interface_class"
+                 location="hyde-create-cxx.xsl?document_file=hyde.xml&amp;form_cxx_param_interface=interface&amp;form_cxx_param_class=cInterface&amp;form_cxx_param_implements=cInterface">
+                    <hyde:text>C++ Interface Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="implement_class"
+                 location="hyde-create-cxx.xsl?document_file=hyde.xml&amp;form_cxx_param_class=cImplement&amp;form_cxx_param_implements=cInterface">
+                    <hyde:text>C++ Implement Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="instance_class"
+                 location="hyde-create-cxx.xsl?document_file=hyde.xml&amp;form_cxx_param_is=cInstance&amp;form_cxx_param_implements=cImplement">
+                    <hyde:text>C++ Instance Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="derived_class"
+                 location="hyde-create-derived-cxx.xsl?document_file=hyde.xml&amp;form_creation_parameter_document_file=hyde.xml">
+                    <hyde:text>Derived C++ Class</hyde:text>
+                </hyde:menu-item>
+
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="derive_cxx">
+                <hyde:text>Derive C++ Classes</hyde:text>
+
+                <hyde:menu-item id="clistt_class"
+                 location="hyde-create-clistt-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>cListT C++ Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="cavltreet_class"
+                 location="hyde-create-cavltreet-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>cAVLTreeT C++ Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="cmain_class"
+                 location="hyde-create-cmain-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>cMain C++ Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="ctfunction_class"
+                 location="hyde-create-ctfunction-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>cTFunction C++ Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="cdocumentelementprocessor_class"
+                 location="hyde-create-cdocumentelementprocessor-cxx.xsl?document_file=hyde.xml">
+                    <hyde:text>cDElementProcessor</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+            
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="java">
+                <hyde:text>Create Java Classes</hyde:text>
+                <hyde:menu-item id="class"
+                 location="hyde-create-java.xsl?document_file=hyde.xml">
+                    <hyde:text>Java Class</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="servlet"
+                 location="hyde-create-java-servlet.xsl?document_file=hyde.xml">
+                    <hyde:text>Java Servlet</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="cs">
+                <hyde:text>Create C# Classes</hyde:text>
+                <hyde:menu-item id="class"
+                 location="hyde-create-cs.xsl?document_file=hyde.xml">
+                    <hyde:text>C# Class</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="cclass">
+                <hyde:text>Create C Classes</hyde:text>
+                <hyde:menu-item id="cclass"
+                 location="hyde-create-c-class.xsl?document_file=hyde.xml">
+                    <hyde:text>C Class</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="drivers">
+                <hyde:text>Create Drivers</hyde:text>
+                <hyde:menu-item id="linux"
+                 location="hyde-create-linux-driver-c.xsl?document_file=hyde.xml">
+                    <hyde:text>Linux Driver</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="windows"
+                 location="hyde-create-windows-driver-c.xsl?document_file=hyde.xml">
+                    <hyde:text>Windows Driver</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="tools">
+                <hyde:text>Tools</hyde:text>
+                <hyde:menu-item id="ebx"
+                 location="http://euryale/html/ebx.html"
+                 is_location_query_and="no">
+                    <hyde:text>Ebx</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+        </hyde:menu>
+
+        <!--==========================================================-->
+        <!-- Menu                                                     -->
+        <!--==========================================================-->
+        <hyde:menu id="project">
+            <hyde:menu-section id="makefile">
+                <hyde:text>Create Makefile</hyde:text>
+
+                <hyde:menu-item id="linux_makefile"
+                 location="hyde-create-makefile.xsl?document_file=hyde.xml&amp;hyde_form_action=linux-makefile.t">
+                    <hyde:text>Linux Makefile</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="windows_makefile"
+                 location="hyde-create-makefile.xsl?document_file=hyde.xml&amp;hyde_form_action=msdev-makefile.t">
+                    <hyde:text>Windows Makefile</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="win2kddk_makefile"
+                 location="hyde-create-makefile.xsl?document_file=hyde.xml&amp;hyde_form_action=win2kddk-makefile.t">
+                    <hyde:text>Win2kDDK Makefile</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="winavr_makefile"
+                 location="hyde-create-makefile.xsl?document_file=hyde.xml&amp;hyde_form_what=WinAVR Makefile&amp;hyde_form_action=winavr-makefile.t">
+                    <hyde:text>WinAVR Makefile</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+        </hyde:menu>
+
+        <!--==========================================================-->
+        <!-- Menu                                                     -->
+        <!--==========================================================-->
+        <hyde:menu id="tools">
+            <!--==========================================================-->
+            <!-- Section                                                  -->
+            <!--==========================================================-->
+            <hyde:menu-section id="scripts">
+                <hyde:text>Create Script Files</hyde:text>
+
+                <hyde:menu-item id="tar_subdirs"
+                 location="hyde-create-tar-subdirs.xsl?document_file=hyde.xml&amp;hyde_form_action=tar-subdirs-cmd.t">
+                    <hyde:text>TAR Subdirs</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="updt_subdirs"
+                 location="hyde-create-tar-subdirs.xsl?document_file=hyde.xml&amp;hyde_form_action=updt-subdirs-cmd.t">
+                    <hyde:text>Update Subdirs</hyde:text>
+                </hyde:menu-item>
+                <hyde:menu-item id="bkup_subdirs"
+                 location="hyde-create-tar-subdirs.xsl?document_file=hyde.xml&amp;hyde_form_action=bkup-subdirs-cmd.t">
+                    <hyde:text>Backup Subdirs</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Menu Section                                             -->
+            <!--==========================================================-->
+            <hyde:menu-section id="transform">
+                <hyde:text>Transform</hyde:text>
+
+                <hyde:menu-item id="t_transform"
+                 location="hyde-transform.xsl?document_file=hyde.xml&amp;hyde_form_default_template_type=t&amp;hyde_form_action=../../t.exe">
+                    <hyde:text>T Transform</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="dt_transform"
+                 location="hyde-transform.xsl?document_file=hyde.xml&amp;hyde_form_default_template_type=dt">
+                    <hyde:text>DT Transform</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="tx_transform"
+                 location="hyde-transform.xsl?document_file=hyde.xml&amp;hyde_form_default_template_type=dt&amp;hyde_form_action=../../tx.exe">
+                    <hyde:text>TX Transform</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="xalan_transform"
+                 location="hyde-transform.xsl?document_file=hyde.xml&amp;hyde_form_default_template_type=xsl&amp;hyde_form_action=../../xalan.exe">
+                    <hyde:text>Xalan Transform</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <!--==========================================================-->
+            <!-- Menu Section                                             -->
+            <!--==========================================================-->
+            <hyde:menu-section id="web_services">
+                <hyde:text>Web Services</hyde:text>
+
+                <!--==========================================================-->
+                <!-- Menu Item                                                -->
+                <!--==========================================================-->
+                <hyde:menu-item id="create_wsdl"
+                 location="hyde-create-wsdl.xsl?document_file=hyde.xml">
+                    <hyde:text>Create WSDL File</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+        </hyde:menu>
+
+        <!--==========================================================-->
+        <!-- Menu                                                     -->
+        <!--==========================================================-->
+        <hyde:menu id="source">
+            <hyde:menu-section id="cxx">
+                <hyde:text>Hydra</hyde:text>
+
+                <hyde:menu-item id="hyde_xml"
+                 location="/hyde/xml/hyde.xml">
+                    <hyde:text>hyde.xml</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_src"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/src&amp;path=c:/source/ccl/src&amp;pattern=*.h">
+                    <hyde:text>C/C++ (*.h)</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_src"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/src&amp;path=c:/source/ccl/src&amp;pattern=*.c">
+                    <hyde:text>C/C++ (*.c)</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_src"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/src&amp;path=c:/source/ccl/src&amp;pattern=*.hxx">
+                    <hyde:text>C/C++ (*.hxx)</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_src"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/src&amp;path=c:/source/ccl/src&amp;pattern=*.cxx">
+                    <hyde:text>C/C++ (*.cxx)</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_xml"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/xml/hyde&amp;path=c:/source/ccl/xml/hyde&amp;pattern=*.xml">
+                    <hyde:text>XML (*.xml)</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_xsl"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/xml/hyde&amp;path=c:/source/ccl/xml/hyde&amp;pattern=*.xsl">
+                    <hyde:text>XSL (*.xsl)</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="hyde_t"
+                 location="directory-html.t?content_type=text/html&amp;alias=/ccl/xml/hyde&amp;path=c:/source/ccl/xml/hyde&amp;pattern=*.t">
+                    <hyde:text>T (*.t)</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+        </hyde:menu>
+
+        <!--==========================================================-->
+        <!-- Menu                                                     -->
+        <!--==========================================================-->
+        <hyde:menu id="docs">
+            <hyde:menu-section id="java">
+                <hyde:text>Java Docs</hyde:text>
+
+                <hyde:menu-item id="j2sdk"
+                 location="/java/j2sdk1.4.2/docs/index.html?q=q">
+                    <hyde:text>J2SDK</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="j2sdk_api"
+                 location="/java/j2sdk1.4.2/docs/api/overview-summary.html?q=q">
+                    <hyde:text>J2SDK API</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="j2sdk_all"
+                 location="/java/j2sdk1.4.2/docs/api/allclasses-noframe.html?q=q">
+                    <hyde:text>All Classes</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="j2sdk_servlet"
+                 location="/java/j2sdk1.4.2/docs/api/javax/servlet/package-summary.html?q=q">
+                    <hyde:text>javax.servlet</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="j2sdk_servlet_http"
+                 location="/java/j2sdk1.4.2/docs/api/javax/servlet/http/package-summary.html?q=q">
+                    <hyde:text>javax.servlet.http</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="j2sdk_org_w3c_dom"
+                 location="/java/j2sdk1.4.2/docs/api/org/w3c/dom/package-summary.html?q=q">
+                    <hyde:text>org.w3c.dom</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="j2sdk_org_xml_sax"
+                 location="/java/j2sdk1.4.2/docs/api/org/xml/sax/package-summary.html?q=q">
+                    <hyde:text>org.xml.sax</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <hyde:menu-section id="t">
+                <hyde:text>T Docs</hyde:text>
+
+                <hyde:menu-item id="t_functions"
+                 location="../t/hyde-t-functions.t?content_type=html">
+                    <hyde:text>T Functions</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+
+            <hyde:menu-section id="usb">
+                <hyde:text>USB Docs</hyde:text>
+
+                <hyde:menu-item id="common"
+                 location="../../pdf/usb/usbccs10.pdf?q=q">
+                    <hyde:text>Common Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="mass"
+                 location="../../pdf/usb/usb_msc_cbi_1.1.pdf?q=q">
+                    <hyde:text>Mass Storage Class</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="mass_bulk"
+                 location="../../pdf/usb/usbmassbulk_10.pdf?q=q">
+                    <hyde:text>Bulk Only Transport</hyde:text>
+                </hyde:menu-item>
+
+                <hyde:menu-item id="mass_ufi"
+                 location="../../pdf/usb/usbmass-ufi10.pdf?q=q">
+                    <hyde:text>UFI Commands</hyde:text>
+                </hyde:menu-item>
+            </hyde:menu-section>
+        </hyde:menu>
+    </hyde:menus>
+
+    <!--==========================================================-->
+    <!-- Folders                                                  -->
+    <!--==========================================================-->
+    <hyde:folders
+     margin="10"
+     location="?frame=folder">
+        <!--==========================================================-->
+        <!--                                                          -->
+        <!--==========================================================-->
+        <hyde:forms
+         bgcolor="#dddddd">
+            <!--==========================================================-->
+            <!--                                                          -->
+            <!--==========================================================-->
+            <hyde:images>
+                <hyde:image id="top_left" width="13" height="13" location="../images/hyde-form-top-left.gif"/>
+                <hyde:image id="bottom_left" width="13" height="13" location="../images/hyde-form-bottom-left.gif"/>
+                <hyde:image id="top_right" width="13" height="13" location="../images/hyde-form-top-right.gif"/>
+                <hyde:image id="bottom_right" width="13" height="13" location="../images/hyde-form-bottom-right.gif"/>
+            </hyde:images>
+            <!--==========================================================-->
+            <!--                                                          -->
+            <!--==========================================================-->
+            <hyde:form-header
+             bgcolor="white">
+                <hyde:font 
+                 face="arial"
+                 size="4"
+                 color="#669966"/>
+            </hyde:form-header>
+            <!--==========================================================-->
+            <!--                                                          -->
+            <!--==========================================================-->
+            <hyde:form-sections
+             bgcolor="#669966">
+                <hyde:font 
+                 face="arial"
+                 size="3"
+                 color="white"/>
+            </hyde:form-sections>
+        </hyde:forms>
+
+		<!--==========================================================-->
+		<!-- Folder                                                   -->
+		<!--==========================================================-->
+		<hyde:folder id="default" default="yes">
+			<hyde:images>
+				<hyde:image id="background"
+				 width="450" height="350" 
+				 location="../images/Hydra-background.png"/>
+				<hyde:ximage id="background"
+				 width="425" height="400" 
+				 location="../images/hydra-background.gif"/>
+				<hyde:ximage id="background"
+				 width="475" height="345" 
+				 location="../images/medusa-background.gif"/>
+			</hyde:images>
+            <hyde:text>
+                <hyde:brand target="hyde" href="hyde.xsl">Hydra</hyde:brand>
+                <hyde:product>Development Environment</hyde:product>
+                <hyde:version>Version 1.1</hyde:version>
+            </hyde:text>
+		</hyde:folder>
+
+		<!--==========================================================-->
+		<!-- Fonts                                                    -->
+		<!--==========================================================-->
+        <hyde:fonts>
+            <hyde:font hover="off" color="black"/>
+            <hyde:font hover="on" color="red"/>
+            <hyde:font id="brand" face="arial" size="6" color="black"/>
+            <hyde:font id="product" face="arial" size="4" color="black"/>
+            <hyde:font id="version" face="arial" size="3" color="black"/>
+            <hyde:font id="for" face="arial" size="3" color="black"/>
+            <hyde:font id="what" face="arial" size="4" color="black"/>
+        </hyde:fonts>
+    </hyde:folders>
+
+    <hyde:classes>
+        <hyde:language name="cxx">
+            <hyde:class name="cListT">
+            </hyde:class>
+            <hyde:class name="cAVLTreeT">
+            </hyde:class>
+            <hyde:class name="cMain">
+                <hyde:template location="cmain-cxx.t"/>
+            </hyde:class>
+            <hyde:class name="cCGI">
+                <hyde:template location="ccgi-cxx.t"/>
+            </hyde:class>
+            <hyde:class name="cDocumentCGI">
+                <hyde:template location="ccgi-cxx.t"/>
+            </hyde:class>
+            <hyde:class name="cDocumentTemplateCGI">
+                <hyde:template location="ccgi-cxx.t"/>
+            </hyde:class>
+            <hyde:class name="cDocumentTransformCGI">
+                <hyde:template location="ccgi-cxx.t"/>
+            </hyde:class>
+        </hyde:language>
+    </hyde:classes>
+</hyde:config>

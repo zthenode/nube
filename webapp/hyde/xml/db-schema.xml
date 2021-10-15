@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--==========================================================-->
+<!--                                                          -->
+<!--   File: db-schema.xml                                    -->
+<!--                                                          -->
+<!-- Author: $author$                                        -->
+<!--   Date: 9/11/2004                                        -->
+<!--                                                          -->
+<!--    $Id$                                                  -->
+<!--                                                          -->
+<!--==========================================================-->
+<db:schema
+ xmlns:db="http://localhost/xml/schemas/db"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ db="objects">
+    <!--==========================================================-->
+    <!--                                                          -->
+    <!--==========================================================-->
+    <db:types>
+        <!--==========================================================-->
+        <!--                                                          -->
+        <!--==========================================================-->
+        <xs:schema
+         targetNamespace="http://localhost/xml/schemas/db"
+         elementFormDefault="qualified">
+
+            <xs:simpleType
+             name="UNBOUNDINT" id="UNBOUNDINT">
+                <xs:restriction base="xs:decimal">
+                    <xs:fractionDigits
+                     value="0" fixed="true" 
+                     id="UNBOUNDINT.fractionDigits"/>
+                    <xs:pattern value="[\-+]?[0-9]+"/>
+                </xs:restriction>
+            </xs:simpleType>
+
+            <xs:simpleType name="BIGINT" id="BIGINT">
+                <xs:restriction base="db:UNBOUNDINT">
+                    <xs:minInclusive value="-9223372036854775808" id="long.minInclusive"/>
+                    <xs:maxInclusive value="9223372036854775807" id="long.maxInclusive"/>
+                </xs:restriction>
+            </xs:simpleType>
+
+            <xs:simpleType name="INT" id="INT">
+                <xs:restriction base="db:BIGINT">
+                    <xs:minInclusive value="-2147483648" id="int.minInclusive"/>
+                    <xs:maxInclusive value="2147483647" id="int.maxInclusive"/>
+                </xs:restriction>
+            </xs:simpleType>
+
+            <xs:simpleType name="SMALLINT" id="SMALLINT">
+                <xs:restriction base="db:INT">
+                    <xs:minInclusive value="-32768" id="int.minInclusive"/>
+                    <xs:maxInclusive value="32767" id="int.maxInclusive"/>
+                </xs:restriction>
+            </xs:simpleType>
+
+            <xs:simpleType name="TINYINT" id="TINYINT">
+                <xs:restriction base="db:SMALLINT">
+                    <xs:minInclusive value="-128" id="int.minInclusive"/>
+                    <xs:maxInclusive value="127" id="int.maxInclusive"/>
+                </xs:restriction>
+            </xs:simpleType>
+
+        </xs:schema>
+
+        <db:type id="bool" sql="BOOLEAN"/>
+        <db:type id="int" sql="INT"/>
+        <db:type id="float" sql="FLOAT"/>
+        <db:type id="char" sql="CHAR(1)"/>
+        <db:type id="string" sql="VARCHAR(255)"/>
+        <db:type id="date" sql="DATE"/>
+        <db:type id="time" sql="TIME"/>
+        <db:type id="datetime" sql="DATETIME"/>
+        <db:type id="clob" sql="CLOB"/>
+        <db:type id="blob" sql="BLOB"/>
+
+        <db:type id="id" sql="INT AUTO_INCREMENT"/>
+        <db:type id="idref" sql="INT"/>
+    </db:types>
+
+    <!--==========================================================-->
+    <!--                                                          -->
+    <!--==========================================================-->
+    <db:tables>
+        <!--==========================================================-->
+        <!--                                                          -->
+        <!--==========================================================-->
+        <db:table name="object">
+            <!--==========================================================-->
+            <!--                                                          -->
+            <!--==========================================================-->
+            <db:columns>
+                <db:column name="id" type="id" primary_key="yes"/>
+                <db:column name="name" type="string"/>
+            </db:columns>
+            <!--==========================================================-->
+            <!--                                                          -->
+            <!--==========================================================-->
+            <db:rows>
+            </db:rows>
+        </db:table>
+    </db:tables>
+</db:schema>

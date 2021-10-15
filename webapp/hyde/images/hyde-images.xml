@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!--==========================================================-->
+<!--                                                          -->
+<!--   File: hyde-images.xml                                  -->
+<!--                                                          -->
+<!-- Author: $author$                                        -->
+<!--   Date: 8/22/2004                                        -->
+<!--                                                          -->
+<!--    $Id$                                                  -->
+<!--                                                          -->
+<!--==========================================================-->
+<group>
+
+<tab
+ file="hyde-tab-top.gif"
+ fgcolor="ffffff" bgcolor="dddddd" edgecolor="aaaaaa"
+ x="0" y="0" width="100" height="26" edge="2"
+ lborder="0" rborder="0" tborder="2" bborder="2"
+ radius="10" state="top"/>
+
+<tab
+ file="hyde-tab.gif"
+ fgcolor="ffffdd" bgcolor="dddddd" edgecolor="aaaaaa"
+ x="100" y="0" width="100" height="26" edge="2"
+ lborder="0" rborder="0" tborder="2" bborder="2"
+ radius="10" state="bottom"/>
+
+<filled-circle-quadrant
+ file="hyde-menu-left.gif"
+ fgcolor="669966" bgcolor="dddddd"
+ quadrant="6" x="0" y="26" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-menu-top-left.gif"
+ fgcolor="669966" bgcolor="dddddd"
+ quadrant="3" x="13" y="26" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-menu-top-right.gif"
+ fgcolor="669966" bgcolor="dddddd"
+ quadrant="0" x="26" y="26" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-menu-bottom-left.gif"
+ fgcolor="669966" bgcolor="dddddd"
+ quadrant="2" x="13" y="39" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-menu-bottom-right.gif"
+ fgcolor="669966" bgcolor="dddddd"
+ quadrant="1" x="26" y="39" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-item-top-left.gif"
+ bgcolor="669966" fgcolor="dddddd"
+ quadrant="3" x="52" y="26" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-item-top-right.gif"
+ bgcolor="669966" fgcolor="dddddd"
+ quadrant="0" x="65" y="26" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-item-bottom-left.gif"
+ bgcolor="669966" fgcolor="dddddd"
+ quadrant="2" x="52" y="39" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-item-bottom-right.gif"
+ bgcolor="669966" fgcolor="dddddd"
+ quadrant="1" x="65" y="39" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-menu-right.gif"
+ fgcolor="669966" bgcolor="dddddd"
+ quadrant="4" x="39" y="26" radius="13"/>
+
+<canvas
+ file="hyde-menu-item.gif"
+ bgcolor="669966" fgcolor="dddddd"
+ x="0" y="51" width="2" height="25"/>
+
+<filled-circle-quadrant
+ file="hyde-form-left.gif"
+ fgcolor="669966" bgcolor="ffffff"
+ quadrant="6" x="13" y="52" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-form-top-left.gif"
+ fgcolor="669966" bgcolor="ffffff"
+ quadrant="3" x="26" y="52" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-form-top-right.gif"
+ fgcolor="669966" bgcolor="ffffff"
+ quadrant="0" x="39" y="52" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-form-bottom-left.gif"
+ fgcolor="669966" bgcolor="ffffff"
+ quadrant="2" x="26" y="65" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-form-bottom-right.gif"
+ fgcolor="669966" bgcolor="ffffff"
+ quadrant="1" x="39" y="65" radius="13"/>
+
+<filled-circle-quadrant
+ file="hyde-form-right.gif"
+ fgcolor="669966" bgcolor="ffffff"
+ quadrant="4" x="52" y="52" radius="13"/>
+
+</group>
