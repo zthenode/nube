@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--================================================================================-->
+<!-- Copyright 2012, Google Inc.                                                    -->
+<!--                                                                                -->
+<!-- Redistribution and use in source and binary forms, with or without             -->
+<!-- modification, are permitted provided that the following conditions are met:    -->
+<!--                                                                                -->
+<!--  1. Redistributions of source code must retain the above copyright notice,     -->
+<!--     this list of conditions and the following disclaimer.                      -->
+<!--  2. Redistributions in binary form must reproduce the above copyright notice,  -->
+<!--     this list of conditions and the following disclaimer in the documentation  -->
+<!--     and/or other materials provided with the distribution.                     -->
+<!--  3. The name of the author may not be used to endorse or promote products      -->
+<!--     derived from this software without specific prior written permission.      -->
+<!--                                                                                -->
+<!-- THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED   -->
+<!-- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           -->
+<!-- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO     -->
+<!-- EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,         -->
+<!-- SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,   -->
+<!-- PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;    -->
+<!-- OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,       -->
+<!-- WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR        -->
+<!-- OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF         -->
+<!-- ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                     -->
+<!--                                                                                -->
+<!--   File: WebrtcPlugin-JavaScriptAPI.xml                                         -->
+<!--                                                                                -->
+<!-- Author: $author$                                                               -->
+<!--   Date: 3/10/2012                                                              -->
+<!--================================================================================-->
+<JavaScriptAPI>
+    <!--========================================================================-->
+    <!--                                                                        -->
+    <!-- properties                                                             -->
+    <!--                                                                        -->
+    <!--========================================================================-->
+    <properties>
+        <property name="version" readOnly="yes" type="string"/>
+        <property name="state" readOnly="yes" type="string"/>
+        <property name="availablePeers" readOnly="yes" type="string"/>
+        <property name="connectedPeer" readOnly="yes" type="string"/>
+        <property name="connectedPeerId" readOnly="yes" type="int"/>
+
+        <property name="autoConnectToPeerOn" readOnly="" type="bool"/>
+        <property name="autoConnectToPeerAfterOn" readOnly="" type="bool"/>
+        <property name="openGLRenderingOn" readOnly="" type="bool"/>
+        <property name="openGLRenderingMode" readOnly="" type="string"/>
+
+        <property name="audioEchoCancellationOn" readOnly="" type="bool"/>
+        <property name="audioNoiseSupressionOn" readOnly="" type="bool"/>
+        <property name="audioAutoGainControlOn" readOnly="" type="bool"/>
+
+        <property name="videoCodecMode" readOnly="" type="string"/>
+        <property name="videoCodecWidth" readOnly="" type="int"/>
+        <property name="videoCodecHeight" readOnly="" type="int"/>
+        <property name="videoCodecFrameRate" readOnly="" type="int"/>
+        <property name="videoCodecMinBitrate" readOnly="" type="int"/>
+
+        <property name="stunServerHost" readOnly="" type="string"/>
+        <property name="stunServerPort" readOnly="" type="int"/>
+
+        <property name="relayUDPServerHost" readOnly="" type="string"/>
+        <property name="relayUDPServerPort" readOnly="" type="int"/>
+
+        <property name="relayTCPServerHost" readOnly="" type="string"/>
+        <property name="relayTCPServerPort" readOnly="" type="int"/>
+
+        <property name="relaySSLServerHost" readOnly="" type="string"/>
+        <property name="relaySSLServerPort" readOnly="" type="int"/>
+
+        <property name="" readOnly="" type=""/>
+    </properties>
+
+    <!--========================================================================-->
+    <!--                                                                        -->
+    <!-- methods                                                                -->
+    <!--                                                                        -->
+    <!--========================================================================-->
+    <methods>
+        <method name="Start" return="">
+            <parameter name="mediaType" type="string"/>
+        </method>
+        <method name="Signin" return="">
+            <parameter name="serverName" type="string"/>
+            <parameter name="serverIP" type="string"/>
+            <parameter name="serverPort" type="int"/>
+        </method>
+        <method name="Signout" return="">
+            <parameter name="" type=""/>
+        </method>
+        <method name="Call" return="">
+            <parameter name="peerName" type="string"/>
+        </method>
+        <method name="Hangup" return="">
+            <parameter name="peerName" type="string"/>
+        </method>
+
+        <method name="" return="">
+            <parameter name="" type=""/>
+        </method>
+    </methods>
+
+    <!--========================================================================-->
+    <!--                                                                        -->
+    <!-- events                                                                 -->
+    <!--                                                                        -->
+    <!--========================================================================-->
+    <events>
+        <event name="onSignedIn">
+            <parameter name="eventData" type="string"/>
+        </event>
+        <event name="onPeerOnline">
+            <parameter name="eventData" type="string"/>
+        </event>
+        <event name="onPeerOffline">
+            <parameter name="eventData" type="string"/>
+        </event>
+        <event name="onRemotePeerCall">
+            <parameter name="eventData" type="string"/>
+        </event>
+        <event name="onRemotePeerHangup">
+            <parameter name="eventData" type="string"/>
+        </event>
+        <event name="onRendererAdd">
+            <parameter name="eventData" type="string"/>
+        </event>
+        <event name="onRendererRemove">
+            <parameter name="eventData" type="string"/>
+        </event>
+
+        <event name="onFailedToConnectToServer">
+            <parameter name="server" type="string"/>
+        </event>
+        <event name="onMessageFromPeer">
+            <parameter name="message" type="string"/>
+        </event>
+        <event name="onChangeState">
+            <parameter name="toState" type="string"/>
+        </event>
+        <event name="onEvent">
+            <parameter name="eventName" type="string"/>
+        </event>
+
+        <event name="">
+            <parameter name="" type=""/>
+        </event>
+    </events>
+</JavaScriptAPI>
