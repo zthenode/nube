@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+=====================================================================
+=== Copyright (c) 1988-2021 $organization$
+===
+=== This software is provided by the author and contributors ``as is'' 
+=== and any express or implied warranties, including, but not limited to, 
+=== the implied warranties of merchantability and fitness for a particular 
+=== purpose are disclaimed. In no event shall the author or contributors 
+=== be liable for any direct, indirect, incidental, special, exemplary, 
+=== or consequential damages (including, but not limited to, procurement 
+=== of substitute goods or services; loss of use, data, or profits; or 
+=== business interruption) however caused and on any theory of liability, 
+=== whether in contract, strict liability, or tort (including negligence 
+=== or otherwise) arising in any way out of the use of this software, 
+=== even if advised of the possibility of such damage.
+===
+===   File: Zthenode-create-qtcreator-form.html
+===
+=== Author: $author$
+===   Date: 8/18/2021
+=====================================================================
+-->
+<!--
+=====================================================================
+=== form
+=====================================================================
+-->
+<form name="Form" method="POST" action="../templates/t/qtcreator/QtCreator.t"
+ onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
+    <div class="form">
+
+    File: <input name="File" value=""/>[Framework]
+    <input type="radio" name="Extension" value="" checked="checked">{.pri | .pro}</input>
+    <input type="radio" name="Extension" value="pri" uchecked="checked">.pri</input>
+    <input type="radio" name="Extension" value="pro" uchecked="checked">.pro</input>
+    <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
+    <br/>
+
+   Template: <select name="FormTemplate">
+    <option value="../templates/t/qtcreator/QtCreator-pri.t">QtCreator .pri file (../templates/t/qtcreator/QtCreator-pri.t)</option>
+    <option value="../templates/t/qtcreator/os-QtCreator-pri.t">os QtCreator .pri file (../templates/t/qtcreator/os-QtCreator-pri.t)</option>
+    <option value="../templates/t/qtcreator/build-QtCreator-pri.t">build QtCreator .pri file (../templates/t/qtcreator/build-QtCreator-pri.t)</option>
+    <option value="../templates/t/qtcreator/host-QtCreator-pri.t">host QtCreator .pri file (../templates/t/qtcreator/host-QtCreator-pri.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/qtcreator/QtCreator-lib-pri.t">QtCreator library .pri file (../templates/t/qtcreator/QtCreator-lib-pri.t)</option>
+    <option value="../templates/t/qtcreator/os-QtCreator-lib-pro.t">os QtCreator library .pro file (../templates/t/qtcreator/os-QtCreator-lib-pro.t)</option>
+    <option value="../templates/t/qtcreator/config-QtCreator-lib-pro.t">config QtCreator library .pro (../templates/t/qtcreator/config-QtCreator-lib-pro.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/qtcreator/QtCreator-exe-pri.t">QtCreator executable .pri file (../templates/t/qtcreator/QtCreator-exe-pri.t)</option>
+    <option value="../templates/t/qtcreator/os-QtCreator-exe-pro.t">os QtCreator executable .pro file (../templates/t/qtcreator/os-QtCreator-exe-pro.t)</option>
+    <option value="../templates/t/qtcreator/config-QtCreator-exe-pro.t">config QtCreator executable .pro (../templates/t/qtcreator/config-QtCreator-exe-pro.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/qtcreator/QtCreator-slib-pri.t">QtCreator shared library .pri file (../templates/t/qtcreator/QtCreator-slib-pri.t)</option>
+    <option value="../templates/t/qtcreator/os-QtCreator-slib-pro.t">os QtCreator shared library .pro file (../templates/t/qtcreator/os-QtCreator-slib-pro.t)</option>
+    <option value="../templates/t/qtcreator/config-QtCreator-slib-pro.t">config QtCreator shared library .pro (../templates/t/qtcreator/config-QtCreator-slib-pro.t)</option>
+    <option value=""></option>
+    <option value="/zthenode-cgi/cgi">cgi parameters</option>
+    <option value="/zthenode-cgi/cgicatch">catch cgi parameters</option>
+    </select>
+    <br/>
+    <br/>
+
+    Framework: <input name="Framework" value=""/>[Framework]
+    <input type="checkbox" name="is_Framework" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Depends: <input name="Depends" value=""/>[Depends]
+    <input type="checkbox" name="is_Depends" value="no" checked="checked">no</input>
+    <br/>
+
+    Target: <input name="Target" value=""/>[%Framework%_
+    <input type="radio" name="HasExe" value="" checked="checked">{exe | lib | slib}</input>
+    <input type="radio" name="HasExe" value="exe" unchecked="checked">exe</input>
+    <input type="radio" name="HasExe" value="lib" unchecked="checked">lib</input>
+    <input type="radio" name="HasExe" value="slib" unchecked="checked">slib</input>
+    <input type="radio" name="HasExe" value="no" unchecked="checked">no</input>]
+    <input type="checkbox" name="is_Target" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b>include(../../../../../../build/QtCreator/%Framework%.pri)</b>
+    <input type="checkbox" name="is_Include_host_build" value="no" checked="checked">no</input>
+    <br/>
+
+    <br/>
+    Source: <input name="Source1" value=""/><select name="Source">
+    <option value=""></option>
+    <option value="source">source</option>
+    <option value="src">src</option>
+    </select>[source]
+    <input type="checkbox" name="is_Source" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Include: <input name="Include1" value=""/><select name="Include">
+    <option value=""></option>
+    <option value="include">include</option>
+    <option value="src">inc</option>
+    </select>[include]
+    <input type="checkbox" name="is_Include" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Os: <input name="Os1" value=""/><select name="Os">
+    <option value=""></option>
+    <option value="Linux">Linux</option>
+    <option value="MacOSX">MacOSX</option>
+    <option value="Windows">Windows</option>
+    </select>[os]
+    <input type="checkbox" name="is_Os" value="no" unchecked="checked">no</input>
+    <br/>
+
+    Uname: <input name="Uname1" value=""/><select name="Uname">
+    <option value=""></option>
+    <option value="Linux">Linux</option>
+    <option value="Darwin">Darwin</option>
+    <option value="Windows">Windows</option>
+    </select>[$$system(uname)]
+    <input type="checkbox" name="is_Uname" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <b>LINUX_VERSION = </b><input name="Linux_version1" value=""/>
+    <select name="Linux_version">
+    <option value=""></option>
+    <option value="$$system(uversion)">$$system(uversion)</option>
+    </select>[$$system(uname -r)]
+    <input type="checkbox" name="is_Linux_version" value="no" unchecked="checked">no</input>
+    <br/>
+    <b>DARWIN_VERSION = </b><input name="Darwin_version1" value=""/>
+    <select name="Darwin_version">
+    <option value=""></option>
+    <option value="$$system(uversion)">$$system(uversion)</option>
+    </select>[$$system(sw_vers -productVersion)]
+    <input type="checkbox" name="is_Darwin_version" value="no" unchecked="checked">no</input>
+    <br/>
+    <b>WINDOWS_VERSION = </b><input name="Windows_version" value=""/>
+    <select name="Windows_version">
+    <option value=""></option>
+    <option value="$$system(uversion)">$$system(uversion)</option>
+    </select>[$$system(ver)]
+    <input type="checkbox" name="is_Windows_version" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    <b>namespace </b><input name="Target_namespace" value=""></input>[%Framework%/app/console/%Target%] <b>{</b>
+    <b></b><input type="checkbox" name="is_Target_namespace" value="no" unchecked="checked">no</input><b></b><br/>
+    <b>class </b><input name="Target_class" value=""></input>[main] <b>{...}</b>
+    <b></b><input type="checkbox" name="is_Target_class" value="no" unchecked="checked">no</input><b> } /// namespace </b><br/>
+
+    <br/>
+    Organization: <input name="Organization" value=""/>[$organization$]
+    <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input>
+    <br/>
+    Author: <input name="Author" value=""/>[$author$]
+    <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input>
+    <br/>
+    Date: <input name="Date" value=""/>[%date()%]
+    <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
+    <br/>
+
+    <br/>
+    Content-Type: <select name="content_type">
+    <option value="text/plain">text</option>
+    <option value="text/html">html</option>
+    <option value="text/xml">xml</option>
+    <option value="application/json">json</option>
+    <option value="application/javascript">javascript</option>
+    <option value=""></option>
+    </select><br/>
+    Action: <select name="FormAction">
+    <option value="../templates/t/qtcreator/QtCreator.t">QtCreator (../templates/t/qtcreator/QtCreator.t)</option>
+    <option value=""></option>
+    <option value="/zthenode-cgi/cgi">cgi parameters</option>
+    <option value="/zthenode-cgi/cgicatch">catch cgi parameters</option>
+    </select><br/>
+    Method: <select name="FormMethod">
+    <option value="POST">POST</option>
+    <option value="GET">GET</option>
+    <option value=""></option>
+    </select><br/>
+    <input type="submit" name="submit" value="submit"/><br/>
+    </div>
+</form>
